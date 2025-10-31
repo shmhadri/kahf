@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>سورة الكهف | قراءة ونص</title>
+<meta name="description" content="سورة الكهف كاملة مع تشغيل صوتي للقرّاء، بحث، انتقال لآية، وتحكم حجم الخط.">
+<style>
+  /* ================== Theme (Light/Dark) via CSS Variables ================== */
+  :root{
+    --bg:#fafafa; --ink:#0f172a; --muted:#64748b; --line:#e5e7eb; --card:#ffffff;
+    --brand:#0ea5e9; --brand-ink:#ffffff; --accent:#22c55e; --warn:#f59e0b; --danger:#ef4444;
+    --shadow:0 10px 30px rgba(2,6,23,.08);
+    --fbase:20px;           /* base font size (updates via range) */
+    --radius:14px;
+    --focus:#fef08a;
+  }
+  :root.dark{
+    --bg:#0b1220; --ink:#e6edf5; --muted:#93a0b5; --line:#243244; --card:#0f172a;
+    --brand:#38bdf8; --brand-ink:#0b1220; --accent:#34d399; --warn:#fbbf24; --danger:#f87171;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not(.light){ color-scheme:dark; }
+    :root:not(.light){ --bg:#0b1220; --ink:#e6edf5; --muted:#93a0b5; --line:#243244; --card:#0f172a;
+                       --brand:#38bdf8; --brand-ink:#0b1220; --accent:#34d399; --warn:#fbbf24; --danger:#f87171;
+                       --shadow:0 10px 30px rgba(0,0,0,.35); }
+  }
+
+  /* ================== Base ================== */
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,"Tajawal","Segoe UI",Arial,sans-serif}
+
+  /* ================== Header / Toolbar ================== */
+  header{
+    position:sticky; top:0; z-index:30;
+    background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 0%) 0%, var(--card) 100%);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    max-width:1100px; margin:auto; padding:10px 12px;
+    display:grid; gap:12px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width:720px){
+    .bar{ grid-template-columns:auto 1fr auto; align-items:center }
+  }
+  .title{
+    display:flex; align-items:center; gap:10px; min-width:0;
+  }
+  .title h1{
+    margin:0; font-weight:700; font-size:clamp(18px,2.3vw,22px); letter-spacing:.2px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .title .back{display:flex; gap:8px; align-items:center}
+  .title .back button{
+    border:1px solid var(--line); background:var(--card); color:var(--ink);
+    padding:8px 12px; border-radius:999px; cursor:pointer;
+  }
+  .toggles{display:flex; gap:8px; align-items:center; justify-content:flex-end}
+  .toggles button, .toggles select{
+    font-size:14px; padding:9px 12px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink);
+    cursor:pointer;
+  }
+  .toggles .primary{
+    background:var(--brand); color:var(--brand-ink); border-color:color-mix(in oklab, var(--brand), #000 10%);
+  }
+
+  /* ================== Controls Row ================== */
+  .controls{
+    max-width:1100px; margin:auto; padding:0 12px 12px; display:grid; gap:10px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width:920px){
+    .controls{ grid-template-columns: 1fr auto auto auto; align-items:end; }
+  }
+  .group{display:grid; gap:10px}
+  .row{display:flex; flex-wrap:wrap; gap:8px}
+  .input, select, button{
+    font-size:16px; padding:10px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink);
+  }
+  input[type="number"]{width:120px}
+  .btn{cursor:pointer}
+  .btn.brand{background:var(--brand); color:var(--brand-ink); border:0}
+  .btn.alt{background:#111827; color:#fff; border:0}
+  .btn.warn{background:var(--warn); color:#0b1220; border:0}
+  .btn.ghost{background:transparent}
+  .grid3{display:grid; gap:8px; grid-template-columns:1fr}
+  @media (min-width:520px){ .grid3{ grid-template-columns:repeat(3,1fr) } }
+
+  /* ================== Ayah list & Basmalah ================== */
+  .container{max-width:1100px; margin:auto; padding:12px}
+
+  .basmala{
+    text-align:center;
+    font-size:clamp(22px, 3.6vw, 34px);
+    line-height:1.9;
+    margin:18px 0 6px;
+    color:var(--ink);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:12px;
+    box-shadow:var(--shadow);
+  }
+  .basmala small{
+    display:block; color:var(--muted); font-size:.75em; margin-top:4px;
+  }
+
+  .ayah{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:14px; margin:10px 0; line-height:2;
+    font-size:clamp(var(--fbase),2.3vw,24px);
+    transition:background .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .ayah:hover{ transform:translateY(-1px) }
+  .ayah .meta{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:14px; margin-bottom:6px}
+  .ayah .text{word-spacing:2px}
+  .ayah .actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+  .ayah .actions button{
+    padding:6px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink);
+    cursor:pointer;
+  }
+  .ayah.playing{ outline:2px solid var(--accent); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent), transparent 75%); }
+  .ayah.focus{ background:var(--focus) }
+
+  /* ================== Helpers ================== */
+  .badge{padding:4px 8px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted)}
+  .num-badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:28px; height:28px; padding:0 8px;
+    border-radius:999px;
+    font-size:14px; font-weight:700;
+    background:var(--brand); color:var(--brand-ink);
+    border:1px solid color-mix(in oklab, var(--brand), #000 10%);
+  }
+  .sp{flex:1}
+  .searchWrap{display:flex; gap:8px}
+  .searchWrap input{flex:1; min-width:180px}
+  .range{display:flex; align-items:center; gap:10px}
+  .range input[type="range"]{ width:180px }
+  .hint{font-size:12px;color:var(--muted)}
+  mark{ background:color-mix(in oklab, var(--brand), #fff 70%); padding:0 3px; border-radius:4px }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="title">
+      <div class="back">
+        <button onclick="goBack()" title="رجوع">↩️ رجوع</button>
+      </div>
+      <h1>سورة الكهف</h1>
+    </div>
+
+    <div class="toggles">
+      <button id="modeBtn" class="primary" title="تبديل المظهر">🌓 تبديل المظهر</button>
+      <select id="reciter" title="اختر القارئ">
+        <option value="minshawi">المنشاوي</option>
+        <option value="afasy">العفاسي</option>
+        <option value="ajamy">العجمي</option>
+        <option value="husary">الحصري</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="group">
+      <div class="searchWrap">
+        <input id="q" class="input" type="text" placeholder="بحث في سورة الكهف..." aria-label="بحث">
+        <button class="btn brand" onclick="doSearch()">بحث</button>
+      </div>
+      <div class="hint">يمكنك كتابة كلمة مثل: <b>أصحاب</b> ثم الضغط على بحث. لإلغاء النتائج، اترك الحقل فارغًا واضغط بحث.</div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <input id="goto" class="input" type="number" min="1" max="110" placeholder="اذهب لآية..." aria-label="اذهب لآية">
+        <button class="btn alt" onclick="goToAyah()">اذهب</button>
+      </div>
+      <div class="range">
+        <label for="fsize">حجم الخط</label>
+        <input id="fsize" type="range" min="16" max="28" value="20">
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="grid3">
+        <button class="btn brand" onclick="playSurah()">▶️ تشغيل السورة كاملة</button>
+        <button class="btn warn" onclick="playSelectedAyah()">🔊 تشغيل الآية المحددة</button>
+        <button class="btn" onclick="stopAudio()">⏹️ إيقاف</button>
+      </div>
+      <div class="hint">اختر القارئ من الأعلى (سيتم تحميل الصوت تلقائيًا).</div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <button class="btn ghost" onclick="scrollTopSmooth()">⬆️ أعلى الصفحة</button>
+        <span class="sp"></span>
+        <span class="badge">تجريبي ✅</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- بسملة بدون رقم -->
+  <div id="basmala" class="basmala" aria-hidden="true"></div>
+
+  <!-- قائمة الآيات -->
+  <div id="list" aria-live="polite"></div>
+</main>
+
+<script>
+  // ==================== Constants & State ====================
+  const API_SURAH = '/api/surah/18';
+  const API_AUDIO = '/api/surah/18/audio';
+  const list = document.getElementById('list');
+  const reciterSel = document.getElementById('reciter');
+  const gotoInp = document.getElementById('goto');
+  const sizeInp = document.getElementById('fsize');
+  const qInp = document.getElementById('q');
+  const modeBtn = document.getElementById('modeBtn');
+  const basmalaEl = document.getElementById('basmala');
+
+  let AYAH = [];      // [{number, text}]
+  let AUDIO = [];     // [{n, url}]
+  let audio = new Audio();
+  let playingIndex = -1;
+
+  // ==================== Theme (Dark/Light) ====================
+  function loadTheme(){
+    const saved = localStorage.getItem('mode');
+    if(saved === 'dark'){ document.documentElement.classList.remove('light'); document.documentElement.classList.add('dark'); }
+    else if(saved === 'light'){ document.documentElement.classList.remove('dark'); document.documentElement.classList.add('light'); }
+  }
+  function toggleTheme(){
+    const r = document.documentElement;
+    if(r.classList.contains('dark')){ r.classList.remove('dark'); r.classList.add('light'); localStorage.setItem('mode','light'); }
+    else if(r.classList.contains('light')){ r.classList.remove('light'); r.classList.add('dark'); localStorage.setItem('mode','dark'); }
+    else{ r.classList.add('dark'); localStorage.setItem('mode','dark'); }
+  }
+  modeBtn.addEventListener('click', toggleTheme);
+
+  // ==================== Helpers ====================
+  function goBack(){ if(document.referrer) history.back(); else location.href='/'; }
+  function scrollTopSmooth(){ window.scrollTo({top:0, behavior:'smooth'}); }
+
+  function persistUI(){
+    localStorage.setItem('fsize', String(sizeInp.value));
+    localStorage.setItem('reciter', reciterSel.value);
+  }
+  function restoreUI(){
+    const f = localStorage.getItem('fsize'); if(f){ sizeInp.value = f; document.documentElement.style.setProperty('--fbase', f+'px'); }
+    const r = localStorage.getItem('reciter'); if(r){ reciterSel.value = r; }
+  }
+  sizeInp.addEventListener('input', ()=>{
+    document.documentElement.style.setProperty('--fbase', sizeInp.value + 'px');
+    persistUI();
+  });
+  reciterSel.addEventListener('change', async ()=>{
+    await loadAudioMap();
+    alert('تم تحميل صوت القارئ. يمكنك الآن التشغيل.');
+    persistUI();
+  });
+
+  // ==================== Render ====================
+  function renderBasmalah(){
+    basmalaEl.innerHTML = `
+      <div>﷽</div>
+      <div>بِسْمِ <span style="letter-spacing:1px">ٱللَّهِ</span> ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+      <small>— —</small>
+    `;
+  }
+
+  function renderAyahs(rows){
+    list.innerHTML = rows.map(a => `
+      <article id="ayah-${a.number}" class="ayah" data-n="${a.number}">
+        <div class="meta">
+          <span class="num-badge" aria-label="رقم الآية">${a.number}</span>
+          <span class="badge">سورة الكهف</span>
+          <button onclick="playAyah(${a.number})" title="تشغيل آية ${a.number}">تشغيل</button>
+        </div>
+        <div class="text">${a.text}</div>
+        <div class="actions">
+          <button onclick="copyAyah(${a.number})">نسخ</button>
+          <button onclick="shareAyah(${a.number})">مشاركة</button>
+          <button onclick="highlightAyah(${a.number})">تمييز</button>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  function highlightPlaying(n, on){
+    const el = document.getElementById('ayah-'+n);
+    if(!el) return;
+    el.classList.toggle('playing', !!on);
+  }
+  function highlightAyah(n){
+    const el = document.getElementById('ayah-'+n);
+    if(!el) return;
+    el.classList.add('focus');
+    setTimeout(()=>el.classList.remove('focus'), 1200);
+  }
+
+  function goToAyah(){
+    const n = +gotoInp.value;
+    const el = document.getElementById('ayah-'+n);
+    if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); highlightAyah(n); }
+  }
+
+  function copyAyah(n){
+    const a = AYAH.find(x=>x.number===n);
+    if(!a) return;
+    navigator.clipboard.writeText(`{${n}} ${a.text}`).then(()=> alert('تم النسخ'));
+  }
+  function shareAyah(n){
+    const el = document.getElementById('ayah-'+n);
+    const url = location.origin + location.pathname + '#ayah-'+n;
+    const a = AYAH.find(x=>x.number===n);
+    if(navigator.share){
+      navigator.share({title:`سورة الكهف - آية ${n}`, text:a?.text || '', url});
+    }else{
+      navigator.clipboard.writeText(url).then(()=> alert('تم نسخ رابط الآية'));
+    }
+    if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); }
+  }
+
+  // ==================== Data Fetch ====================
+  async function loadSurah(){
+    try{
+      const res = await fetch(API_SURAH, {headers:{'Accept':'application/json'}});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data = await res.json();
+      AYAH = data.ayahs || [];
+      renderAyahs(AYAH);
+    }catch(err){
+      console.error(err);
+      alert('تعذّر تحميل السورة. تأكد من أن الخادم يعمل ثم حدّث الصفحة.');
+    }
+  }
+  async function loadAudioMap(){
+    try{
+      const r = reciterSel.value;
+      const res = await fetch(`${API_AUDIO}?reciter=${encodeURIComponent(r)}`, {headers:{'Accept':'application/json'}});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data = await res.json();
+      AUDIO = data.items || [];
+    }catch(err){
+      console.error(err);
+      AUDIO = [];
+      alert('تعذّر تحميل الصوت. جرّب قارئًا آخر أو أعد المحاولة لاحقًا.');
+    }
+  }
+  function getAudioUrl(n){
+    const it = AUDIO.find(x=>x.n===n);
+    return it ? it.url : null;
+  }
+
+  // ==================== Audio Control ====================
+  function clearPlayingFlag(){
+    if(playingIndex>=0){
+      const n = AYAH[playingIndex]?.number;
+      if(n) highlightPlaying(n, false);
+    }
+  }
+  function playAyah(n){
+    const url = getAudioUrl(n);
+    if(!url){ alert('الصوت غير جاهز لهذه الآية. اختر القارئ وانتظر التحميل.'); return; }
+    try{
+      audio.pause();
+      clearPlayingFlag();
+      audio = new Audio(url);
+      playingIndex = AYAH.findIndex(x=>x.number===n);
+      const el = document.getElementById('ayah-'+n);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); }
+      highlightPlaying(n, true);
+      audio.play().catch(()=>{});
+      audio.onended = ()=>{ highlightPlaying(n, false); };
+    }catch(e){ console.error(e); }
+  }
+  function playSurah(){
+    if(!AUDIO.length){ alert('حمّل الصوت أولًا (اختر القارئ).'); return; }
+    audio.pause();
+    function playAt(idx){
+      const n = AYAH[idx]?.number;
+      const url = getAudioUrl(n);
+      if(!url) return;
+      clearPlayingFlag();
+      playingIndex = idx;
+      audio.src = url;
+      const el = document.getElementById('ayah-'+n);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); }
+      highlightPlaying(n, true);
+      audio.play().catch(()=>{});
+    }
+    audio.onended = ()=>{
+      const prevN = AYAH[playingIndex]?.number;
+      if(prevN) highlightPlaying(prevN, false);
+      playingIndex++;
+      if(playingIndex < AYAH.length) playAt(playingIndex);
+    };
+    playAt(0);
+  }
+  function playSelectedAyah(){
+    const n = +gotoInp.value || 1;
+    playAyah(n);
+  }
+  function stopAudio(){
+    audio.pause(); audio.currentTime = 0;
+    clearPlayingFlag();
+    playingIndex = -1;
+  }
+
+  // ==================== Search ====================
+  async function doSearch(){
+    const q = qInp.value.trim();
+    if(!q){ renderAyahs(AYAH); return; }
+    try{
+      const res = await fetch(`/api/search?surah=18&q=${encodeURIComponent(q)}&highlight=1&limit=110`, {headers:{'Accept':'application/json'}});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data = await res.json();
+      const results = (data.results || []).map(r => ({number:r.number, text:r.text}));
+      renderAyahs(results);
+      if(results.length) document.getElementById('ayah-'+results[0].number)?.scrollIntoView({behavior:'smooth'});
+    }catch(err){
+      console.error(err);
+      alert('تعذّر إجراء البحث الآن.');
+    }
+  }
+
+  // ==================== Boot ====================
+  (async function init(){
+    loadTheme();
+    restoreUI();
+    document.documentElement.style.setProperty('--fbase', sizeInp.value + 'px');
+
+    renderBasmalah();  // ← بسملة بدون رقم
+    await loadSurah();
+    await loadAudioMap();
+
+    // فتح رابط مع هاش آية مباشرة
+    if(location.hash.startsWith('#ayah-')){
+      const n = +location.hash.replace('#ayah-','');
+      const el = document.getElementById('ayah-'+n);
+      if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); highlightAyah(n); }
+    }
+  })();
+</script>
+</body>
+</html>
