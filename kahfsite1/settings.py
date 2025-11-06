@@ -1,13 +1,13 @@
 """
 Django settings for kahfsite1 project.
 
-- Arabic locale + Asia/Riyadh
-- REST API (DRF)
-- Templates/static/media paths
-- Dev security sane defaults (prod-ready toggles)
-
-Django 5.2.x
+- Arabic + Asia/Riyadh
+- Static via WhiteNoise (CompressedManifest)
+- Prod security for Render
+- Optional Postgres via DATABASE_URL (falls back to SQLite)
+- DRF minimal + browsable in DEBUG
 """
+
 from pathlib import Path
 import os
 
@@ -22,21 +22,30 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-secret-key-change-me")
 DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
 
-# Comma-separated env → "a.com,b.com"
+
 def _split_csv_env(name: str, default: str = "") -> list[str]:
+    """Split comma-separated env var into list (trims spaces)."""
     raw = os.getenv(name, default)
     return [x.strip() for x in raw.split(",") if x.strip()]
 
-ALLOWED_HOSTS = _split_csv_env("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost")
+
+# تُقرأ من المتغيرات، مع افتراض onrender محميًا افتراضيًا
+ALLOWED_HOSTS = _split_csv_env(
+    "DJANGO_ALLOWED_HOSTS",
+    "127.0.0.1,localhost,.onrender.com",
+)
+
+# يجب أن تحتوي على البروتوكول (Django 4/5):
 CSRF_TRUSTED_ORIGINS = _split_csv_env(
     "DJANGO_CSRF_TRUSTED_ORIGINS",
-    "http://127.0.0.1:8000,http://localhost:8000",
+    "http://127.0.0.1:8000,http://localhost:8000,https://*.onrender.com",
 )
 
 # ==============================
 # Apps
 # ==============================
 INSTALLED_APPS = [
+    # Django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -47,7 +56,7 @@ INSTALLED_APPS = [
     # Third-party
     "rest_framework",
 
-    # Local
+    # Local apps
     "quran",
 ]
 
@@ -56,13 +65,12 @@ INSTALLED_APPS = [
 # ==============================
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # مهم للإنتاج لتقديم static مباشرة
+
+    # WhiteNoise: يقدم static من داخل Django في الإنتاج
     "whitenoise.middleware.WhiteNoiseMiddleware",
+
     "django.contrib.sessions.middleware.SessionMiddleware",
-
-    # دعم الترجمة (بعد Session وقبل Common)
-    "django.middleware.locale.LocaleMiddleware",
-
+    "django.middleware.locale.LocaleMiddleware",  # بعد Session وقبل Common
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -78,7 +86,7 @@ ROOT_URLCONF = "kahfsite1.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],  # templates/surah18.html
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -95,7 +103,9 @@ WSGI_APPLICATION = "kahfsite1.wsgi.application"
 ASGI_APPLICATION = "kahfsite1.asgi.application"
 
 # ==============================
-# Database (SQLite for dev)
+# Database
+# - SQLite محليًا
+# - إن وُجد DATABASE_URL (Postgres مثلاً) نستخدمه تلقائيًا
 # ==============================
 DATABASES = {
     "default": {
@@ -103,6 +113,17 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+_db_url = os.getenv("DATABASE_URL")
+if _db_url:
+    # دعم اختياري لـ dj-database-url؛ لو غير مثبت سيستمر على SQLite
+    try:
+        import dj_database_url  # type: ignore
+
+        DATABASES["default"] = dj_database_url.parse(_db_url, conn_max_age=600, ssl_require=True)
+    except Exception:
+        # لا تفشل الإعدادات إن لم تتوفر المكتبة – تبقى SQLite
+        pass
 
 # ==============================
 # Password Validation
@@ -122,45 +143,54 @@ TIME_ZONE = "Asia/Riyadh"
 USE_I18N = True
 USE_TZ = True
 
-LANGUAGES = [
-    ("ar", "Arabic"),
-    ("en", "English"),
-]
+LANGUAGES = [("ar", "Arabic"), ("en", "English")]
 LOCALE_PATHS = [BASE_DIR / "locale"]
 
 # ==============================
 # Static / Media
 # ==============================
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 _static_dir = BASE_DIR / "static"
 STATICFILES_DIRS = [_static_dir] if _static_dir.exists() else []
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# WhiteNoise storage (ضغط + نسخ بأسماء مُعلَّمة)
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "OPTIONS": {"location": str(MEDIA_ROOT)},
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
-# WhiteNoise compression & cache headers (يعمل تلقائيًا)
-# بالإمكان تفعيل Manifest storage في الإنتاج عبر STORAGES أدناه
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ==============================
 # DRF
 # ==============================
 REST_FRAMEWORK = {
-    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
+    "DEFAULT_RENDERER_CLASSES": (
+        ["rest_framework.renderers.JSONRenderer"]
+        if not DEBUG
+        else ["rest_framework.renderers.JSONRenderer", "rest_framework.renderers.BrowsableAPIRenderer"]
+    ),
     "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
     # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
 }
 
 # ==============================
-# Caches
+# Caching (خفيف داخل الذاكرة)
 # ==============================
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
         "LOCATION": "kahfsite1-localmem",
-        "TIMEOUT": 60 * 5,  # 5 minutes
+        "TIMEOUT": 60 * 5,
     }
 }
 
@@ -171,21 +201,17 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    # خلف Proxy (Render) — لو احتجته:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    # Manifest filenames للـ static (مهم للتخزين طويل المدى)
-    STORAGES = {
-        "default": {
-            "BACKEND": "django.core.files.storage.FileSystemStorage",
-            "OPTIONS": {"location": str(MEDIA_ROOT)},
-        },
-        "staticfiles": {
-            "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
-        },
-    }
+
+    # HSTS (يوصى به عند ثبات HTTPS بالكامل)
+    SECURE_HSTS_SECONDS = int(os.getenv("DJANGO_HSTS_SECONDS", "31536000"))  # سنة
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 # ==============================
 # Logging
+# - في التطوير: Console + ملف django.log
+# - في الإنتاج (Render): Console فقط (أفضل للخدمات المُدارة)
 # ==============================
 LOGGING = {
     "version": 1,
@@ -196,14 +222,20 @@ LOGGING = {
     },
     "handlers": {
         "console": {"class": "logging.StreamHandler", "formatter": "simple"},
-        "file": {
-            "class": "logging.FileHandler",
-            "filename": BASE_DIR / "django.log",
-            "formatter": "verbose",
-        },
+        **(
+            {
+                "file": {
+                    "class": "logging.FileHandler",
+                    "filename": str(BASE_DIR / "django.log"),
+                    "formatter": "verbose",
+                }
+            }
+            if DEBUG
+            else {}
+        ),
     },
     "loggers": {
-        "django": {"handlers": ["console"], "level": "INFO"},
-        "quran": {"handlers": ["console", "file"], "level": "INFO", "propagate": False},
+        "django": {"handlers": ["console"] + (["file"] if DEBUG else []), "level": "INFO"},
+        "quran": {"handlers": ["console"] + (["file"] if DEBUG else []), "level": "INFO", "propagate": False},
     },
 }
