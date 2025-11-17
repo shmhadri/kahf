@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -62,6 +61,7 @@
     color:var(--ink);
     font-family:system-ui,"Tajawal","Segoe UI",Arial,sans-serif;
   }
+
   body.focus-mode{
     background:#020617;
   }
@@ -77,6 +77,7 @@
     background:linear-gradient(180deg, rgba(248,250,252,.95) 0%, rgba(248,250,252,.98) 100%);
     border-color:var(--line);
   }
+
   .bar{
     max-width:1100px; margin:auto; padding:10px 12px 4px;
     display:grid; gap:12px;
@@ -85,6 +86,7 @@
   @media (min-width:720px){
     .bar{ grid-template-columns:auto 1fr auto; align-items:center }
   }
+
   .title{
     display:flex; align-items:center; gap:10px; min-width:0;
   }
@@ -94,6 +96,7 @@
     color:#e5edf7;
   }
   header.light-mode .title h1{ color:var(--ink); }
+
   .title .back{display:flex; gap:8px; align-items:center}
   .pill-btn{
     border:1px solid rgba(148,163,184,.5);
@@ -129,24 +132,6 @@
     border-color:var(--line);
   }
 
-  /* زر الانتقال إلى صفحة قصة أصحاب الكهف */
-  .toggles .story-link{
-    text-decoration:none;
-    font-size:14px;
-    padding:9px 10px;
-    border-radius:10px;
-    border:1px solid var(--line);
-    background:transparent;
-    color:var(--ink);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-  }
-  .toggles .story-link:hover{
-    border-color:var(--brand);
-    color:var(--brand);
-  }
-
   /* ================== Controls Row ================== */
   .controls{
     max-width:1100px; margin:auto; padding:0 12px 10px;
@@ -170,6 +155,7 @@
   .btn.full{width:100%}
   .grid3{display:grid; gap:8px; grid-template-columns:1fr}
   @media (min-width:520px){ .grid3{ grid-template-columns:repeat(3,1fr) } }
+
   .searchWrap{display:flex; gap:8px}
   .searchWrap input{flex:1; min-width:140px}
   .range{display:flex; align-items:center; gap:10px}
@@ -213,10 +199,16 @@
   }
   .tag{display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:999px; font-size:11px; border:1px solid rgba(148,163,184,.5)}
   .tag.green{border-color:rgba(22,163,74,.7); color:#bbf7d0}
-  .salawat-count{font-size:20px; font-weight:800; margin:2px 0 4px;}
+
+  .salawat-count{
+    font-size:20px;
+    font-weight:800;
+    margin:2px 0 4px;
+  }
 
   /* ================== Ayah list & Basmalah ================== */
   .container{max-width:1100px; margin:auto; padding:10px 12px 80px}
+
   .basmala{
     text-align:center;
     font-size:clamp(22px,3.6vw,34px);
@@ -237,6 +229,7 @@
   .basmala small{
     display:block; color:var(--muted); font-size:.75em; margin-top:4px;
   }
+
   .ayah{
     background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     box-shadow:var(--shadow); padding:14px; margin:10px 0; line-height:2;
@@ -258,6 +251,7 @@
     box-shadow:0 0 0 4px color-mix(in oklab, var(--accent), transparent 70%);
   }
   .ayah.focus{ background:var(--focus) }
+
   .badge{padding:4px 8px;border-radius:999px;border:1px solid var(--line);font-size:11px;color:var(--muted)}
   .num-badge{
     display:inline-flex; align-items:center; justify-content:center;
@@ -274,6 +268,7 @@
     background:rgba(15,23,42,.04);
     border:1px solid var(--line);
   }
+
   mark{ background:color-mix(in oklab, var(--brand), #fff 70%); padding:0 3px; border-radius:4px }
 
   /* ================== Focus mode ================== */
@@ -281,8 +276,12 @@
   body.focus-mode #fridayReminders{
     display:none;
   }
-  body.focus-mode .container{ padding-top:16px; }
-  body.focus-mode .ayah{ font-size:clamp(24px, 3.1vw, 30px); }
+  body.focus-mode .container{
+    padding-top:16px;
+  }
+  body.focus-mode .ayah{
+    font-size:clamp(24px, 3.1vw, 30px);
+  }
 
   /* ================== Bottom Player Bar ================== */
   .player-bar{
@@ -297,9 +296,14 @@
     max-width:1100px; margin:auto;
     display:flex; align-items:center; gap:10px; flex-wrap:wrap;
   }
-  .player-meta{flex:1; min-width:0; font-size:13px;}
+  .player-meta{
+    flex:1; min-width:0;
+    font-size:13px;
+  }
   .player-meta strong{font-size:14px}
-  .player-buttons{display:flex; gap:6px; flex-wrap:wrap;}
+  .player-buttons{
+    display:flex; gap:6px; flex-wrap:wrap;
+  }
   .player-btn{
     border-radius:999px;
     border:1px solid rgba(148,163,184,.7);
@@ -309,57 +313,10 @@
     font-size:14px;
     padding:8px 9px;
   }
-  .player-status{font-size:11px;color:#a5b4fc;}
-
-  /* ================== Tafseer Overlay (مكبر) ================== */
-  .tafseer-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(15,23,42,.55);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:60;
-    padding:10px;
+  .player-status{
+    font-size:11px;
+    color:#a5b4fc;
   }
-  .tafseer-dialog{
-    max-width:820px;
-    width:96%;
-    background:var(--card);
-    color:var(--ink);
-    border-radius:18px;
-    border:1px solid var(--line);
-    box-shadow:var(--shadow);
-    padding:18px 18px 14px;
-    max-height:82vh;
-    overflow:auto;
-    font-size:calc(var(--fbase) * 0.9);
-  }
-  .tafseer-dialog-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    margin-bottom:8px;
-  }
-  #tafseerTitle{
-    font-size:calc(var(--fbase) * 0.95);
-    font-weight:700;
-  }
-  #tafseerBody{
-    font-size:calc(var(--fbase) * 0.95);
-    line-height:2;
-  }
-  .tafseer-note{
-    margin-top:10px;
-    font-size:12px;
-    color:var(--muted);
-  }
-  .tafseer-close{
-    font-size:13px;
-    padding:4px 10px;
-  }
-
   .hidden{display:none !important;}
 </style>
 </head>
@@ -373,32 +330,30 @@
       </div>
       <h1>سورة الكهف</h1>
     </div>
+
     <div class="toggles">
-      <a href="{% url 'kahf_story' %}" class="story-link" title="ملخّص قصة أصحاب الكهف">
-        📖 قصة أصحاب الكهف
-      </a>
       <button id="modeBtn" class="primary" title="تبديل المظهر">🌓 مظهر ليلي/نهاري</button>
       <button id="focusBtn" class="outline" title="وضع التركيز">🎯 وضع التركيز</button>
-
-      <!-- ✅ قائمة القرّاء (أربعة فقط) -->
       <select id="reciter" title="اختر القارئ">
-        <option value="afasy">العفاسي</option>
         <option value="minshawi">المنشاوي</option>
+        <option value="afasy">العفاسي</option>
+        <option value="ajamy">العجمي</option>
         <option value="husary">الحصري</option>
-        <option value="shuraim">الشريم</option>
       </select>
     </div>
   </div>
 
   <div class="controls">
+    <!-- مجموعة البحث -->
     <div class="group">
       <div class="searchWrap">
         <input id="q" class="input" type="text" placeholder="بحث في سورة الكهف..." aria-label="بحث">
         <button class="btn brand" onclick="doSearch()">بحث</button>
       </div>
-      <div class="hint">اكتب كلمة مثل: <b>أصحاب</b> ثم اضغط بحث. لإلغاء النتائج، اترك الحقل فارغًا واضغط بحث.</div>
+      <div class="hint">يمكنك كتابة كلمة مثل: <b>أصحاب</b> ثم الضغط على بحث. لإلغاء النتائج، اترك الحقل فارغًا واضغط بحث.</div>
     </div>
 
+    <!-- الانتقال للآية + حجم الخط -->
     <div class="group">
       <div class="row">
         <input id="goto" class="input" type="number" min="1" max="110" placeholder="اذهب لآية..." aria-label="اذهب لآية">
@@ -410,6 +365,7 @@
       </div>
     </div>
 
+    <!-- التحكم في التشغيل -->
     <div class="group">
       <div class="grid3">
         <button class="btn brand full" onclick="playSurah()">▶️ تشغيل السورة كاملة</button>
@@ -419,6 +375,7 @@
       <div class="hint">اختر القارئ من الأعلى وسيتم تحميل الروابط الصوتية في الخلفية.</div>
     </div>
 
+    <!-- أدوات عامة -->
     <div class="group">
       <div class="row">
         <button class="btn ghost" onclick="scrollTopSmooth()">⬆️ أعلى الصفحة</button>
@@ -429,17 +386,20 @@
   </div>
 </header>
 
+<!-- تذكيرات الجمعة والصلاة على النبي ﷺ -->
 <section id="fridayReminders">
+  <!-- تذكير بوقت يُرجى فيه إجابة الدعاء -->
   <article id="fridayLastHourCard" class="card">
     <div class="tag">🕌 تذكير الجمعة</div>
     <h2>وقت يُرجى فيه إجابة الدعاء قبل غروب الجمعة</h2>
     <div class="time-big" id="fridayTargetTime">--:--</div>
     <div class="countdown" id="fridayCountdown">سيظهر العدّاد يوم الجمعة بإذن الله.</div>
     <div class="hint">
-      <small>التوقيت تقريبي، ويمكن ضبطه من إعدادات الخادم حسب مدينتك (آخر ساعة من نهار الجمعة).</small>
+      <small>تنبيه تقريبي يمكنك ضبطه من الكود حسب توقيت مدينتك (آخر ساعة من نهار الجمعة).</small>
     </div>
   </article>
 
+  <!-- التبكير لصلاة الجمعة -->
   <article id="fridayEarlyCard" class="card">
     <div class="tag green">⏰ التبكير للجمعة</div>
     <h3>احرص على التبكير لصلاة الجمعة</h3>
@@ -447,6 +407,7 @@
     <p id="fridayEarlyStatus" class="countdown"></p>
   </article>
 
+  <!-- عدّاد الصلاة على النبي ﷺ -->
   <article id="salawatCard" class="card">
     <div class="tag">💖 الصلاة على النبي ﷺ</div>
     <h3>أكثر من الصلاة على النبي ﷺ خاصة يوم الجمعة</h3>
@@ -457,10 +418,14 @@
 </section>
 
 <main class="container">
+  <!-- بسملة بدون رقم -->
   <div id="basmala" class="basmala" aria-hidden="true"></div>
+
+  <!-- قائمة الآيات -->
   <div id="list" aria-live="polite"></div>
 </main>
 
+<!-- شريط المشغّل السفلي الثابت -->
 <div id="playerBar" class="player-bar hidden">
   <div class="player-bar-inner">
     <div class="player-meta">
@@ -475,25 +440,33 @@
   </div>
 </div>
 
-<div id="tafseerOverlay" class="hidden tafseer-overlay">
-  <div class="tafseer-dialog">
-    <div class="tafseer-dialog-header">
-      <strong id="tafseerTitle">تفسير مختصر</strong>
-      <button onclick="closeTafseer()" class="btn tafseer-close">✕ إغلاق</button>
+<!-- نافذة بسيطة لعرض التفسير المختصر -->
+<div id="tafseerOverlay" class="hidden" style="
+  position:fixed; inset:0; background:rgba(15,23,42,.55); display:flex; align-items:center; justify-content:center; z-index:60;
+">
+  <div style="
+    max-width:520px; width:92%; background:var(--card); color:var(--ink);
+    border-radius:16px; border:1px solid var(--line); box-shadow:var(--shadow);
+    padding:14px 14px 10px; max-height:80vh; overflow:auto;
+  ">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+      <strong id="tafseerTitle" style="font-size:15px;">تفسير مختصر</strong>
+      <button onclick="closeTafseer()" class="btn" style="font-size:13px;padding:4px 9px;">✕ إغلاق</button>
     </div>
-    <div id="tafseerBody"></div>
-    <div class="tafseer-note">
+    <div id="tafseerBody" style="font-size:14px; line-height:1.8; color:var(--ink);"></div>
+    <div style="margin-top:8px;font-size:11px;color:var(--muted);">
       هذا التفسير مختصر وتعريفي، وليس بديلًا عن الرجوع لكتب التفسير المعتمدة.
     </div>
   </div>
 </div>
 
 <script>
+  // ==================== ثوابت وروابط API ====================
   const API_SURAH = '/api/surah/18';
   const API_AUDIO = '/api/surah/18/audio';
-  const API_TAFSEER = '/api/tafseer';
-  const API_TIMES_TODAY = '/api/times/today';
+  const API_TAFSEER = '/api/tafseer';   // مسار مقترح: /api/tafseer?surah=18&ayah=5
 
+  // ==================== عناصر DOM ====================
   const list = document.getElementById('list');
   const reciterSel = document.getElementById('reciter');
   const gotoInp = document.getElementById('goto');
@@ -507,6 +480,9 @@
   const fridayTargetTimeEl = document.getElementById('fridayTargetTime');
   const fridayCountdownEl = document.getElementById('fridayCountdown');
   const fridayEarlyStatusEl = document.getElementById('fridayEarlyStatus');
+  const fridayLastHourCard = document.getElementById('fridayLastHourCard');
+  const fridayEarlyCard = document.getElementById('fridayEarlyCard');
+
   const salawatCountEl = document.getElementById('salawatCount');
 
   const playerBar = document.getElementById('playerBar');
@@ -518,19 +494,26 @@
   const tafseerTitle = document.getElementById('tafseerTitle');
   const tafseerBody = document.getElementById('tafseerBody');
 
-  let AYAH = [];
-  let AUDIO = [];
+  // ==================== حالة عامة ====================
+  let AYAH = [];      // [{number, text}]
+  let AUDIO = [];     // [{n, url}]
   let audio = new Audio();
   let playingIndex = -1;
   let isFocusMode = false;
-  let fridayTargetTimestamp = null;
-  let fridayIsFriday = false;
 
+  // إعداد وقت تقريبي لآخر ساعة من الجمعة
+  // ملاحظة: عدّل HOUR و MINUTE حسب مدينتك (توقيت محلي للمتصفح).
+  const FRIDAY_TARGET_HOUR = 17;    // 5 مساءً تقريبًا
+  const FRIDAY_TARGET_MINUTE = 0;
+
+  // ==================== المظهر (ليلي/نهاري) ====================
   function applyHeaderMode(){
-    const isDark = document.documentElement.classList.contains('dark') &&
-                   !document.documentElement.classList.contains('light');
-    if(isDark) headerEl.classList.remove('light-mode');
-    else headerEl.classList.add('light-mode');
+    const isDark = document.documentElement.classList.contains('dark') && !document.documentElement.classList.contains('light');
+    if(isDark){
+      headerEl.classList.remove('light-mode');
+    }else{
+      headerEl.classList.add('light-mode');
+    }
   }
 
   function loadTheme(){
@@ -544,7 +527,6 @@
     }
     applyHeaderMode();
   }
-
   function toggleTheme(){
     const r = document.documentElement;
     if(r.classList.contains('dark')){
@@ -561,6 +543,7 @@
   }
   modeBtn.addEventListener('click', toggleTheme);
 
+  // ==================== وضع التركيز ====================
   function loadFocusMode(){
     const saved = localStorage.getItem('focusMode');
     if(saved === 'on'){
@@ -583,10 +566,8 @@
   }
   focusBtn.addEventListener('click', toggleFocusMode);
 
-  function goBack(){
-    if(document.referrer) history.back();
-    else location.href='/';
-  }
+  // ==================== مساعدات عامة ====================
+  function goBack(){ if(document.referrer) history.back(); else location.href='/'; }
   function scrollTopSmooth(){ window.scrollTo({top:0, behavior:'smooth'}); }
 
   function persistUI(){
@@ -602,28 +583,17 @@
     const r = localStorage.getItem('reciter');
     if(r){ reciterSel.value = r; }
   }
-
-  // تكبير/تصغير خط التفسير مع السورة
-  function applyFontSizeToTafseer(){
-    const base = parseInt(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue('--fbase')
-    ) || 20;
-    tafseerBody.style.fontSize = (base * 0.95) + 'px';
-    tafseerTitle.style.fontSize = (base * 0.95) + 'px';
-  }
-
   sizeInp.addEventListener('input', ()=>{
     document.documentElement.style.setProperty('--fbase', sizeInp.value + 'px');
-    applyFontSizeToTafseer();
     persistUI();
   });
-
   reciterSel.addEventListener('change', async ()=>{
     await loadAudioMap();
+    playerStatus.textContent = 'تم تحديث روابط الصوت للقارئ المختار.';
     persistUI();
   });
 
+  // ==================== بسملة ====================
   function renderBasmalah(){
     basmalaEl.innerHTML = `
       <div>﷽</div>
@@ -632,50 +602,25 @@
     `;
   }
 
-  // دالة مساعدة للهروب من الأحرف الخاصة في الـ RegExp
-  function escapeRegExp(str){
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  // عرض الآيات مع دعم تظليل كلمة البحث
-  function renderAyahs(rows, highlightText = ''){
-    const q = (highlightText || '').trim();
-    const hasHighlight = q.length > 0;
-    const re = hasHighlight ? new RegExp('(' + escapeRegExp(q) + ')', 'gi') : null;
-
-    const html = rows.map(a => {
-      let text = a.text || '';
-      if(re){
-        text = text.replace(re, '<mark>$1</mark>');
-      }
-      return `
-        <article id="ayah-${a.number}" class="ayah" data-n="${a.number}">
-          <div class="meta">
-            <span class="num-badge" aria-label="رقم الآية">${a.number}</span>
-            <span class="badge">سورة الكهف</span>
-            <span class="pill-small">آية رقم ${a.number}</span>
-            <button onclick="playAyah(${a.number})" class="pill-small">🔊 تشغيل</button>
-            <button onclick="showTafseer(${a.number})" class="pill-small">📖 تفسير مختصر</button>
-          </div>
-          <div class="text">${text}</div>
-          <div class="actions">
-            <button onclick="copyAyah(${a.number})">نسخ</button>
-            <button onclick="shareAyah(${a.number})">مشاركة</button>
-            <button onclick="highlightAyah(${a.number})">تمييز</button>
-          </div>
-        </article>
-      `;
-    }).join('');
-
-    if(!html){
-      list.innerHTML = `
-        <p style="margin:16px 0;font-size:14px;color:var(--muted);text-align:center;">
-          لا توجد آيات مطابقة لبحثك حاليًا.
-        </p>
-      `;
-    }else{
-      list.innerHTML = html;
-    }
+  // ==================== رسم الآيات ====================
+  function renderAyahs(rows){
+    list.innerHTML = rows.map(a => `
+      <article id="ayah-${a.number}" class="ayah" data-n="${a.number}">
+        <div class="meta">
+          <span class="num-badge" aria-label="رقم الآية">${a.number}</span>
+          <span class="badge">سورة الكهف</span>
+          <span class="pill-small">آية رقم ${a.number}</span>
+          <button onclick="playAyah(${a.number})" title="تشغيل آية ${a.number}" class="pill-small">🔊 تشغيل</button>
+          <button onclick="showTafseer(${a.number})" class="pill-small">📖 تفسير مختصر</button>
+        </div>
+        <div class="text">${a.text}</div>
+        <div class="actions">
+          <button onclick="copyAyah(${a.number})">نسخ</button>
+          <button onclick="shareAyah(${a.number})">مشاركة</button>
+          <button onclick="highlightAyah(${a.number})">تمييز</button>
+        </div>
+      </article>
+    `).join('');
   }
 
   function highlightPlaying(n, on){
@@ -702,26 +647,21 @@
   function copyAyah(n){
     const a = AYAH.find(x=>x.number===n);
     if(!a) return;
-    navigator.clipboard.writeText(`{${n}} ${a.text}`)
-      .then(()=> alert('تم نسخ نص الآية.'));
+    navigator.clipboard.writeText(`{${n}} ${a.text}`).then(()=> alert('تم نسخ نص الآية.'));
   }
   function shareAyah(n){
     const el = document.getElementById('ayah-'+n);
     const url = location.origin + location.pathname + '#ayah-'+n;
     const a = AYAH.find(x=>x.number===n);
     if(navigator.share){
-      navigator.share({
-        title:`سورة الكهف - آية ${n}`,
-        text:a?.text || '',
-        url
-      });
+      navigator.share({title:`سورة الكهف - آية ${n}`, text:a?.text || '', url});
     }else{
-      navigator.clipboard.writeText(url)
-        .then(()=> alert('تم نسخ رابط الآية.'));
+      navigator.clipboard.writeText(url).then(()=> alert('تم نسخ رابط الآية.'));
     }
     if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); }
   }
 
+  // ==================== تحميل بيانات السورة والصوت ====================
   async function loadSurah(){
     try{
       const res = await fetch(API_SURAH, {headers:{'Accept':'application/json'}});
@@ -735,51 +675,35 @@
     }
   }
 
-  // تحميل الصوت مع الحفاظ على الصوت السابق عند فشل القارئ الجديد
   async function loadAudioMap(){
-    const r = reciterSel.value;
-    const previousAudio = AUDIO.slice();
-    const previousReciter = localStorage.getItem('reciter') || 'minshawi';
-
     try{
-      const res = await fetch(
-        `${API_AUDIO}?reciter=${encodeURIComponent(r)}`,
-        {headers:{'Accept':'application/json'}}
-      );
+      const r = reciterSel.value;
+      const res = await fetch(`${API_AUDIO}?reciter=${encodeURIComponent(r)}`, {headers:{'Accept':'application/json'}});
       if(!res.ok) throw new Error('HTTP '+res.status);
-
       const data = await res.json();
-      const items = data.items || [];
-
-      if(!items.length){
-        AUDIO = previousAudio;
-        reciterSel.value = previousReciter;
-        alert('تعذّر تحميل الصوت لهذا القارئ، تم الإبقاء على القارئ السابق.');
-        return;
-      }
-
-      AUDIO = items;
-      localStorage.setItem('reciter', r);
-      playerStatus.textContent =
-        `تم تحميل الصوت للقارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`;
+      AUDIO = data.items || [];
+      // هنا نحافظ على خريطة الروابط في الذاكرة لتسريع الانتقال بين الآيات
     }catch(err){
       console.error(err);
-      AUDIO = previousAudio;
-      reciterSel.value = previousReciter;
-      alert('تعذّر تحميل الصوت (قد تكون مشكلة في الاتصال أو مزوّد التلاوة). تم الإبقاء على القارئ السابق.');
+      AUDIO = [];
+      alert('تعذّر تحميل الصوت. جرّب قارئًا آخر أو أعد المحاولة لاحقًا.');
     }
   }
-
   function getAudioUrl(n){
     const it = AUDIO.find(x=>x.n===n);
     return it ? it.url : null;
   }
 
-  function showPlayerBar(show){ playerBar.classList.toggle('hidden', !show); }
-  function updatePlayerBar(label, statusText){
-    if(label) playerLabel.textContent = label;
-    if(statusText) playerStatus.textContent = statusText;
+  // ==================== شريط المشغّل السفلي ====================
+  function showPlayerBar(show){
+    playerBar.classList.toggle('hidden', !show);
   }
+
+  function updatePlayerBar(label, status){
+    if(label) playerLabel.textContent = label;
+    if(status) playerStatus.textContent = status;
+  }
+
   function clearPlayingFlag(){
     if(playingIndex>=0){
       const n = AYAH[playingIndex]?.number;
@@ -790,7 +714,7 @@
   function playAyah(n){
     const url = getAudioUrl(n);
     if(!url){
-      alert('الصوت غير جاهز لهذه الآية. تأكد من اختيار القارئ وانتظار اكتمال التحميل.');
+      alert('الصوت غير جاهز لهذه الآية. تأكد من اختيار القارئ وانتظر لحظات.');
       return;
     }
     try{
@@ -802,13 +726,13 @@
       if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); }
       highlightPlaying(n, true);
       showPlayerBar(true);
-      updatePlayerBar(
-        `تشغيل آية رقم ${n}`,
-        `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`
-      );
+      updatePlayerBar(`تشغيل آية رقم ${n}`, `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`);
       playPauseBtn.textContent = '⏸ إيقاف مؤقت';
       audio.play().catch(()=>{});
-      audio.onended = ()=>{ highlightPlaying(n, false); };
+      audio.onended = ()=>{
+        highlightPlaying(n, false);
+        // لا ننتقل تلقائيًا لآية أخرى في وضع الآية المفردة
+      };
     }catch(e){
       console.error(e);
     }
@@ -816,7 +740,7 @@
 
   function playSurah(){
     if(!AUDIO.length){
-      alert('لم يتم تحميل الصوت بعد.\nاختر قارئًا من القائمة وانتظر ثواني حتى يكتمل التحميل، ثم جرّب مرة أخرى.');
+      alert('حمّل الصوت أولًا عن طريق اختيار القارئ.');
       return;
     }
     audio.pause();
@@ -834,14 +758,12 @@
 
       const el = document.getElementById('ayah-'+n);
       if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); }
-
       highlightPlaying(n, true);
+
       showPlayerBar(true);
-      updatePlayerBar(
-        `تشغيل السورة - آية ${n} من ${AYAH.length}`,
-        `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`
-      );
+      updatePlayerBar(`تشغيل السورة - آية ${n} من ${AYAH.length}`, `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`);
       playPauseBtn.textContent = '⏸ إيقاف مؤقت';
+
       audio.play().catch(()=>{});
     }
 
@@ -866,8 +788,7 @@
   }
 
   function stopAudio(){
-    audio.pause();
-    audio.currentTime = 0;
+    audio.pause(); audio.currentTime = 0;
     clearPlayingFlag();
     playingIndex = -1;
     playPauseBtn.textContent = '▶️ تشغيل';
@@ -885,146 +806,162 @@
   }
 
   function playPrev(){
-    if(playingIndex > 0) playFromIndex(playingIndex - 1);
+    if(playingIndex <= 0){ return; }
+    playFromIndex(playingIndex - 1);
   }
   function playNext(){
-    if(playingIndex >= 0 && playingIndex < AYAH.length-1) playFromIndex(playingIndex + 1);
+    if(playingIndex < 0 || playingIndex >= AYAH.length-1){ return; }
+    playFromIndex(playingIndex + 1);
   }
-
   function playFromIndex(idx){
     if(!AUDIO.length || idx<0 || idx>=AYAH.length) return;
     const n = AYAH[idx].number;
     const url = getAudioUrl(n);
     if(!url) return;
-
     audio.pause();
     clearPlayingFlag();
     playingIndex = idx;
     audio = new Audio(url);
-
     const el = document.getElementById('ayah-'+n);
     if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); }
-
     highlightPlaying(n, true);
     showPlayerBar(true);
-    updatePlayerBar(
-      `آية ${n} من ${AYAH.length}`,
-      `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`
-    );
+    updatePlayerBar(`آية ${n} من ${AYAH.length}`, `القارئ: ${reciterSel.options[reciterSel.selectedIndex].text}`);
     playPauseBtn.textContent = '⏸ إيقاف مؤقت';
     audio.play().catch(()=>{});
   }
 
-  // بحث آمن لا يفرّغ الصفحة عند عدم وجود نتائج
+  // ==================== البحث ====================
   async function doSearch(){
     const q = qInp.value.trim();
-
-    // لو الحقل فاضي → رجوع للقائمة الكاملة
     if(!q){
       renderAyahs(AYAH);
       return;
     }
-
     try{
-      const res = await fetch(
-        `/api/search?surah=18&q=${encodeURIComponent(q)}&highlight=1&limit=110`,
-        {headers:{'Accept':'application/json'}}
-      );
-
-      let results = [];
-
-      if(res.ok){
-        const data = await res.json();
-
-        if(Array.isArray(data.results) && data.results.length){
-          results = data.results.map(r => ({
-            number:r.number,
-            text:r.text
-          }));
-        }else if(Array.isArray(data.ayahs) && data.ayahs.length){
-          results = data.ayahs;
-        }
-      }
-
-      // لو الـ API ما رجّع شيء واضح → بحث محلي
-      if(!results.length){
-        results = AYAH.filter(a =>
-          (a.text || '').toString().includes(q)
-        );
-      }
-
-      if(!results.length){
-        alert('لا توجد آيات تحتوي هذه الكلمة في سورة الكهف.');
-        return;
-      }
-
-      renderAyahs(results, q);
-
-      const first = results[0];
-      const firstEl = document.getElementById('ayah-'+first.number);
-      if(firstEl){
-        firstEl.scrollIntoView({behavior:'smooth', block:'center'});
-      }
-
+      const res = await fetch(`/api/search?surah=18&q=${encodeURIComponent(q)}&highlight=1&limit=110`, {headers:{'Accept':'application/json'}});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data = await res.json();
+      const results = (data.results || []).map(r => ({number:r.number, text:r.text}));
+      renderAyahs(results);
+      if(results.length) document.getElementById('ayah-'+results[0].number)?.scrollIntoView({behavior:'smooth'});
     }catch(err){
       console.error(err);
-      alert('تعذّر إجراء البحث عبر الخادم، سيتم استخدام بحث داخل الصفحة.');
-
-      const results = AYAH.filter(a =>
-        (a.text || '').toString().includes(q)
-      );
-
-      if(!results.length){
-        alert('لا توجد آيات تحتوي هذه الكلمة في سورة الكهف.');
-        return;
-      }
-
-      renderAyahs(results, q);
-      const first = results[0];
-      const firstEl = document.getElementById('ayah-'+first.number);
-      if(firstEl){
-        firstEl.scrollIntoView({behavior:'smooth', block:'center'});
-      }
+      alert('تعذّر إجراء البحث الآن.');
     }
   }
 
+  // ==================== التفسير المختصر ====================
   async function showTafseer(n){
-    applyFontSizeToTafseer();
     tafseerTitle.textContent = `تفسير مختصر - آية ${n}`;
     tafseerBody.textContent = 'جاري تحميل التفسير المختصر...';
+
     tafseerOverlay.classList.remove('hidden');
+
     try{
-      const url = `${API_TAFSEER}?surah=18&ayah=${encodeURIComponent(n)}&lang=ar&source=sadi`;
+      // استدعاء API مقترح - يمكنك تعديله/تنفيذه في Django
+      const url = `${API_TAFSEER}?surah=18&ayah=${encodeURIComponent(n)}`;
       const res = await fetch(url, {headers:{'Accept':'application/json'}});
       if(!res.ok){
-        tafseerBody.textContent =
-          'سيُضاف التفسير المختصر قريبًا بإذن الله. (لم يتم تفعيل واجهة التفسير بعد).';
+        tafseerBody.textContent = 'سيُضاف التفسير المختصر قريبًا بإذن الله. (لم يتم تفعيل واجهة التفسير بعد).';
         return;
       }
       const data = await res.json();
       const text = data.text || data.summary || '';
-      tafseerBody.textContent = text || 'سيُضاف التفسير المختصر قريبًا بإذن الله.';
+      if(text){
+        tafseerBody.textContent = text;
+      }else{
+        tafseerBody.textContent = 'سيُضاف التفسير المختصر قريبًا بإذن الله.';
+      }
     }catch(e){
       console.error(e);
-      tafseerBody.textContent =
-        'تعذّر تحميل التفسير الآن. تأكد من إعداد واجهة /api/tafseer في الخادم.';
+      tafseerBody.textContent = 'تعذّر تحميل التفسير الآن. حاول لاحقًا أو تأكد من إعداد واجهة التفسير في الخادم.';
     }
   }
-  function closeTafseer(){ tafseerOverlay.classList.add('hidden'); }
+  function closeTafseer(){
+    tafseerOverlay.classList.add('hidden');
+  }
   tafseerOverlay.addEventListener('click', (e)=>{
     if(e.target === tafseerOverlay) closeTafseer();
   });
 
+  // ==================== تذكيرات الجمعة ====================
+  function setupFridayReminders(){
+    const now = new Date();
+    const day = now.getDay(); // الجمعة = 5
+    const isFriday = (day === 5);
+
+    // إعداد وقت الهدف (حسب أقرب جمعة قادمة)
+    const target = new Date(now);
+    // نضبط اليوم على الجمعة القادمة أو الحالية
+    const diffToFriday = (5 - day + 7) % 7;
+    target.setDate(now.getDate() + diffToFriday);
+    target.setHours(FRIDAY_TARGET_HOUR, FRIDAY_TARGET_MINUTE, 0, 0);
+
+    const timeLabel = `${String(FRIDAY_TARGET_HOUR).padStart(2,'0')}:${String(FRIDAY_TARGET_MINUTE).padStart(2,'0')} تقريبًا`;
+    fridayTargetTimeEl.textContent = timeLabel;
+
+    function updateCountdown(){
+      const now2 = new Date();
+      const diffMs = target - now2;
+      if(diffMs <= 0){
+        fridayCountdownEl.textContent = 'نرجو الإكثار من الدعاء في هذا الوقت المبارك.';
+        return;
+      }
+      const totalSec = Math.floor(diffMs/1000);
+      const days = Math.floor(totalSec / 86400);
+      const hours = Math.floor((totalSec % 86400)/3600);
+      const mins = Math.floor((totalSec % 3600)/60);
+      const secs = totalSec % 60;
+
+      let parts = [];
+      if(days>0) parts.push(`${days} يوم`);
+      if(hours>0) parts.push(`${hours} ساعة`);
+      if(mins>0) parts.push(`${mins} دقيقة`);
+      parts.push(`${secs} ثانية`);
+
+      fridayCountdownEl.textContent = `المتبقي حتى الوقت المظنون لساعة الإجابة: ${parts.join(' و ')}`;
+    }
+
+    // لو اليوم جمعة نعرّف العدّاد كل ثانية، وإلا نعرض رسالة عامة
+    if(isFriday){
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      fridayLastHourCard.style.opacity = '1';
+    }else{
+      fridayCountdownEl.textContent = 'سيظهر العدّاد تلقائيًا في يوم الجمعة بإذن الله.';
+      fridayLastHourCard.style.opacity = '0.9';
+    }
+
+    // التبكير لصلاة الجمعة
+    if(isFriday){
+      const hour = now.getHours();
+      if(hour < 12){
+        fridayEarlyStatusEl.textContent = 'الآن وقت ممتاز للاستعداد والتبكير للمسجد. 🌿';
+        fridayEarlyCard.style.display = 'block';
+      }else{
+        fridayEarlyStatusEl.textContent = 'إن فات التبكير هذا الأسبوع، فاستعد من الآن للجمعة القادمة.';
+        fridayEarlyCard.style.display = 'block';
+      }
+    }else{
+      fridayEarlyStatusEl.textContent = 'يُنصح بالتخطيط للتبكير لصلاة الجمعة القادمة من الآن.';
+      fridayEarlyCard.style.display = 'block';
+    }
+  }
+
+  // ==================== عدّاد الصلاة على النبي ﷺ ====================
   function getTodayKey(){
     const d = new Date();
     return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
   }
+
   function loadSalawat(){
     const dayKey = getTodayKey();
     const stored = localStorage.getItem('salawat:'+dayKey);
     const count = stored ? parseInt(stored,10) || 0 : 0;
     salawatCountEl.textContent = String(count);
   }
+
   function incrementSalawat(){
     const dayKey = getTodayKey();
     const stored = localStorage.getItem('salawat:'+dayKey);
@@ -1034,91 +971,25 @@
     salawatCountEl.textContent = String(count);
   }
 
-  async function setupFridayReminders(){
-    try{
-      const res = await fetch(API_TIMES_TODAY, {headers:{'Accept':'application/json'}});
-      if(!res.ok) throw new Error('HTTP '+res.status);
-      const data = await res.json();
-      fridayTargetTimeEl.textContent = data.last_hour_start + ' تقريبًا';
-      fridayIsFriday = !!data.is_friday;
-      fridayTargetTimestamp = data.last_hour_timestamp;
-
-      const jumuahTime = data.jumuah_time || '12:00';
-      const nowTs = Math.floor(Date.now()/1000);
-      const jumuahTs = data.jumuah_timestamp;
-
-      if(fridayIsFriday){
-        if(nowTs < jumuahTs - 2*3600){
-          fridayEarlyStatusEl.textContent =
-            'الآن وقت ممتاز للاستعداد والتبكير للمسجد. 🌿';
-        }else if(nowTs < jumuahTs + 3600){
-          fridayEarlyStatusEl.textContent =
-            'إن كنت لم تصلِّ بعد فبادر، وإن صليت فاشغل وقتك بالذكر والقراءة.';
-        }else{
-          fridayEarlyStatusEl.textContent =
-            'إن فات التبكير هذا الأسبوع، فاستعد من الآن للجمعة القادمة. 🤍';
-        }
-      }else{
-        fridayEarlyStatusEl.textContent =
-          'خطط من الآن للتبكير لصلاة الجمعة القادمة إن شاء الله.';
-      }
-
-      if(fridayIsFriday && fridayTargetTimestamp){
-        updateFridayCountdown();
-        setInterval(updateFridayCountdown, 1000);
-      }else{
-        fridayCountdownEl.textContent =
-          'سيظهر العدّاد تلقائيًا في يوم الجمعة بإذن الله.';
-      }
-    }catch(e){
-      console.error(e);
-      fridayCountdownEl.textContent = 'تعذّر تحميل أوقات الجمعة من الخادم.';
-      fridayEarlyStatusEl.textContent =
-        'يمكن ضبط أوقات الجمعة من إعدادات الخادم لاحقًا.';
-    }
-  }
-
-  function updateFridayCountdown(){
-    if(!fridayTargetTimestamp) return;
-    const nowSec = Math.floor(Date.now()/1000);
-    const diff = fridayTargetTimestamp - nowSec;
-    if(diff <= 0){
-      fridayCountdownEl.textContent =
-        'نرجو الإكثار من الدعاء في هذا الوقت المبارك. 🤲';
-      return;
-    }
-    const days = Math.floor(diff / 86400);
-    const hours = Math.floor((diff % 86400)/3600);
-    const mins = Math.floor((diff % 3600)/60);
-    const secs = diff % 60;
-    const parts = [];
-    if(days>0) parts.push(`${days} يوم`);
-    if(hours>0) parts.push(`${hours} ساعة`);
-    if(mins>0) parts.push(`${mins} دقيقة`);
-    parts.push(`${secs} ثانية`);
-    fridayCountdownEl.textContent =
-      `المتبقي حتى الوقت المظنون لساعة الإجابة: ${parts.join(' و ')}`;
-  }
-
+  // ==================== تهيئة أولية ====================
   (async function init(){
     loadTheme();
     loadFocusMode();
     restoreUI();
     document.documentElement.style.setProperty('--fbase', sizeInp.value + 'px');
-    applyFontSizeToTafseer();
+
     renderBasmalah();
+    setupFridayReminders();
     loadSalawat();
-    await setupFridayReminders();
+
     await loadSurah();
     await loadAudioMap();
 
+    // فتح رابط مع هاش آية مباشرة
     if(location.hash.startsWith('#ayah-')){
       const n = +location.hash.replace('#ayah-','');
       const el = document.getElementById('ayah-'+n);
-      if(el){
-        el.scrollIntoView({behavior:'smooth',block:'center'});
-        highlightAyah(n);
-      }
+      if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); highlightAyah(n); }
     }
   })();
 </script>

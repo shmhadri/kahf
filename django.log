@@ -1,0 +1,364 @@
+[INFO] 2025-11-17 17:44:18,555 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 17:44:21,253 django.server: "GET / HTTP/1.1" 200 36746
+[INFO] 2025-11-17 17:44:21,490 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 17:44:27,634 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9085
+[WARNING] 2025-11-17 17:45:38,805 django.request: Not Found: /api/tafseer
+[WARNING] 2025-11-17 17:45:38,806 django.server: "GET /api/tafseer?surah=18&ayah=18 HTTP/1.1" 404 3518
+[WARNING] 2025-11-17 17:45:54,605 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 17:45:54,610 django.server: "GET /favicon.ico HTTP/1.1" 404 2514
+[WARNING] 2025-11-17 17:50:21,292 django.request: Not Found: /api/tafseer
+[WARNING] 2025-11-17 17:50:21,298 django.server: "GET /api/tafseer?surah=18&ayah=11 HTTP/1.1" 404 3518
+[INFO] 2025-11-17 18:03:24,226 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 18:03:25,891 django.server: "GET / HTTP/1.1" 200 33696
+[WARNING] 2025-11-17 18:03:25,976 django.request: Not Found: /api/times/today
+[WARNING] 2025-11-17 18:03:25,979 django.server: "GET /api/times/today HTTP/1.1" 404 3509
+[INFO] 2025-11-17 18:03:26,077 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-17 18:03:57,002 django.request: Not Found: /api/tafseer
+[WARNING] 2025-11-17 18:03:57,004 django.server: "GET /api/tafseer?surah=18&ayah=15&lang=ar&source=sadi HTTP/1.1" 404 3546
+[INFO] 2025-11-17 18:15:02,658 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\models.py changed, reloading.
+[INFO] 2025-11-17 18:15:03,419 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 18:23:02,025 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 18:23:03,938 django.server: "GET / HTTP/1.1" 200 33696
+[INFO] 2025-11-17 18:23:04,036 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 18:23:04,244 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-17 18:23:17,150 django.request: Not Found: /api/tafseer
+[WARNING] 2025-11-17 18:23:17,151 django.server: "GET /api/tafseer?surah=18&ayah=1&lang=ar&source=sadi HTTP/1.1" 404 50
+[WARNING] 2025-11-17 18:23:24,219 django.request: Not Found: /api/tafseer
+[WARNING] 2025-11-17 18:23:24,220 django.server: "GET /api/tafseer?surah=18&ayah=1&lang=ar&source=sadi HTTP/1.1" 404 50
+[WARNING] 2025-11-17 18:24:22,047 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 18:24:22,049 django.server: "GET /favicon.ico HTTP/1.1" 404 3026
+[INFO] 2025-11-17 19:07:38,998 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 19:07:40,839 django.server: "GET / HTTP/1.1" 200 33696
+[INFO] 2025-11-17 19:07:40,949 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 19:07:41,173 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 19:07:45,293 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9085
+[INFO] 2025-11-17 19:07:58,578 django.server: "GET /api/tafseer?surah=18&ayah=9&lang=ar&source=sadi HTTP/1.1" 200 258
+[INFO] 2025-11-17 19:26:17,711 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 19:26:19,561 django.server: "GET / HTTP/1.1" 200 33696
+[INFO] 2025-11-17 19:26:19,976 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 19:26:20,471 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 19:26:28,751 django.server: "GET / HTTP/1.1" 200 33696
+[INFO] 2025-11-17 19:26:28,794 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 19:27:12,582 django.server: "GET /api/tafseer?surah=18&ayah=8&lang=ar&source=sadi HTTP/1.1" 200 212
+[INFO] 2025-11-17 20:01:50,939 django.utils.autoreload: Watching for file changes with StatReloader
+[ERROR] 2025-11-17 20:01:53,612 django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf_story' is not a valid view function or pattern name.
+[ERROR] 2025-11-17 20:01:53,669 django.server: "GET / HTTP/1.1" 500 114560
+[INFO] 2025-11-17 20:02:20,007 django.utils.autoreload: Watching for file changes with StatReloader
+[ERROR] 2025-11-17 20:02:21,864 django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\shmha\kahfsite1\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf_story' is not a valid view function or pattern name.
+[ERROR] 2025-11-17 20:02:21,935 django.server: "GET / HTTP/1.1" 500 114560
+[INFO] 2025-11-17 20:03:41,859 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\utils.py changed, reloading.
+[INFO] 2025-11-17 20:03:45,214 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:08:51,733 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\views.py changed, reloading.
+[INFO] 2025-11-17 20:08:52,505 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:09:15,492 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\views.py changed, reloading.
+[INFO] 2025-11-17 20:09:16,373 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:11:41,731 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\views.py changed, reloading.
+[INFO] 2025-11-17 20:11:44,639 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:12:12,491 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:13:26,773 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\utils.py changed, reloading.
+[INFO] 2025-11-17 20:13:27,602 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:13:30,177 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\views.py changed, reloading.
+[INFO] 2025-11-17 20:13:31,216 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:17:46,045 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\views.py changed, reloading.
+[INFO] 2025-11-17 20:17:46,628 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:17:59,698 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:18:47,292 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\utils.py changed, reloading.
+[INFO] 2025-11-17 20:18:48,249 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:18:59,727 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:19:01,192 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:19:01,254 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:19:01,450 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:19:01,454 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:19:01,721 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:19:06,291 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9085
+[WARNING] 2025-11-17 20:19:10,898 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 20:19:10,899 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 20:19:11,001 django.server: "GET /api/surah/18/audio?reciter=sudais HTTP/1.1" 200 57
+[INFO] 2025-11-17 20:19:16,625 django.server: "GET /api/surah/18/audio?reciter=ghamdi HTTP/1.1" 200 57
+[INFO] 2025-11-17 20:19:23,817 django.server: "GET /api/surah/18/audio?reciter=faris HTTP/1.1" 200 56
+[INFO] 2025-11-17 20:19:52,441 django.server: "GET /api/surah/18/audio?reciter=shuraim HTTP/1.1" 200 58
+[INFO] 2025-11-17 20:22:02,774 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\utils.py changed, reloading.
+[INFO] 2025-11-17 20:22:03,425 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:22:44,017 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:22:44,648 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:22:58,396 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:22:59,083 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:23:01,540 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:23:02,306 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:23:05,955 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:23:06,596 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:23:36,344 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:23:37,577 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:23:37,731 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:23:37,919 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:23:46,800 django.server: "GET /api/surah/18/audio?reciter=maher HTTP/1.1" 200 56
+[INFO] 2025-11-17 20:24:05,994 django.server: "GET /api/surah/18/audio?reciter=afasy HTTP/1.1" 200 8974
+[INFO] 2025-11-17 20:24:53,579 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:24:53,767 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:24:54,514 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:25:24,305 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8863
+[WARNING] 2025-11-17 20:25:35,860 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 20:25:35,863 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 20:27:42,000 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:27:54,574 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:27:58,834 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:37:32,029 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:38:34,168 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:38:40,919 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:38:40,959 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:38:41,102 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:38:44,068 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 20:39:42,996 django.server: "GET /api/tafseer?surah=18&ayah=1&lang=ar&source=sadi HTTP/1.1" 200 254
+[INFO] 2025-11-17 20:43:05,645 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:43:08,867 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:43:28,955 django.server: "GET /api/search?surah=18&q=%D8%A7%D9%84%D8%AC%D9%86%D8%AA%D9%8A%D9%86&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:43:44,439 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:44:47,244 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:44:48,620 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:44:48,768 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:44:49,627 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:44:49,759 django.server: "GET / HTTP/1.1" 200 34684
+[INFO] 2025-11-17 20:44:49,832 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:45:08,501 django.server: "GET /api/search?surah=18&q=%7B4%7D%20%D9%88%D9%8E%D9%8A%D9%8F%D9%86%D8%B0%D9%90%D8%B1%D9%8E%20%D9%B1%D9%84%D9%91%D9%8E%D8%B0%D9%90%D9%8A%D9%86%D9%8E%20%D9%82%D9%8E%D8%A7%D9%84%D9%8F%D9%88%D8%A7%DB%9F%20%D9%B1%D8%AA%D9%91%D9%8E%D8%AE%D9%8E%D8%B0%D9%8E%20%D9%B1%D9%84%D9%84%D9%91%D9%8E%D9%87%D9%8F%20%D9%88%D9%8E%D9%84%D9%8E%D8%AF%D9%8B%DB%AD%D8%A7&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:45:57,918 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:45:59,313 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:45:59,384 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:45:59,550 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:45:59,553 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:45:59,811 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-17 20:46:22,377 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 20:46:22,379 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 20:46:38,084 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:49:32,606 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 20:49:33,538 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:49:35,082 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 20:49:35,888 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:49:38,474 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 20:49:39,124 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:49:40,598 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 20:49:41,221 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:05,434 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:50:06,471 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:12,156 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:50:13,044 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:15,630 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:50:19,820 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:34,754 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_urls.py changed, reloading.
+[INFO] 2025-11-17 20:50:35,675 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:47,288 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:50:49,209 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:50:49,360 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:50:49,652 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:50:49,894 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:50:50,665 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 20:50:53,141 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:50:53,224 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:50:53,442 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:50:53,497 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:51:11,790 django.server: "GET /api/surah/18/audio?reciter=ajamy HTTP/1.1" 200 77
+[INFO] 2025-11-17 20:51:18,736 django.server: "GET /api/search?surah=18&q=%D8%AC%D8%A7%D8%B2%D8%A7%D9%86&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 20:56:50,308 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 20:56:52,265 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 20:56:52,368 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 20:56:52,591 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-17 20:57:00,749 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 20:57:00,751 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 21:00:53,215 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 21:00:54,902 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 21:00:59,731 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 21:01:05,464 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 21:01:07,284 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 21:14:27,230 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 21:14:28,993 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 21:14:28,996 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 21:14:29,123 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 21:14:29,126 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 21:14:29,386 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 21:15:47,460 django.server: "GET /api/search?surah=18&q=%D9%85&highlight=1&limit=110 HTTP/1.1" 200 20442
+[INFO] 2025-11-17 21:16:21,352 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[WARNING] 2025-11-17 21:18:03,395 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 21:18:03,411 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 21:27:14,515 django.server: "GET /api/surah/18/audio?reciter=sudais HTTP/1.1" 200 92
+[WARNING] 2025-11-17 21:27:16,441 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 21:27:16,444 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 21:27:29,507 django.server: "GET /api/surah/18/audio?reciter=afasy HTTP/1.1" 200 8992
+[INFO] 2025-11-17 21:27:34,202 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8882
+[INFO] 2025-11-17 21:27:55,136 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9106
+[INFO] 2025-11-17 21:33:31,403 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 21:33:33,831 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 21:33:47,872 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 21:33:49,789 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 21:33:50,019 django.server: "GET /api/times/today HTTP/1.1" 200 257
+[ERROR] 2025-11-17 21:33:50,763 quran.api_views: Œÿ√ ›Ì  Õ„Ì· «·”Ê—… 18: 'Surah' object has no attribute 'name_ar'
+[ERROR] 2025-11-17 21:33:50,776 django.request: Internal Server Error: /api/surah/18
+[ERROR] 2025-11-17 21:33:50,777 django.server: "GET /api/surah/18 HTTP/1.1" 500 55
+[INFO] 2025-11-17 21:34:24,954 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 21:34:26,302 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 21:34:26,408 django.server: "GET / HTTP/1.1" 200 36112
+[ERROR] 2025-11-17 21:34:26,684 quran.api_views: Œÿ√ ›Ì  Õ„Ì· «·”Ê—… 18: 'Surah' object has no attribute 'name_ar'
+[ERROR] 2025-11-17 21:34:26,696 django.request: Internal Server Error: /api/surah/18
+[ERROR] 2025-11-17 21:34:26,698 django.server: "GET /api/surah/18 HTTP/1.1" 500 55
+[ERROR] 2025-11-17 21:34:26,745 quran.api_views: Œÿ√ ›Ì  Õ„Ì· «·”Ê—… 18: 'Surah' object has no attribute 'name_ar'
+[ERROR] 2025-11-17 21:34:26,756 django.request: Internal Server Error: /api/surah/18
+[ERROR] 2025-11-17 21:34:26,775 django.server: "GET /api/surah/18 HTTP/1.1" 500 55
+[ERROR] 2025-11-17 21:34:43,096 quran.api_views: Œÿ√ €Ì— „ Êﬁ⁄ ›Ì audio_map: 'Surah' object has no attribute 'name_ar'
+[ERROR] 2025-11-17 21:34:43,101 django.request: Internal Server Error: /api/surah/18/audio
+[ERROR] 2025-11-17 21:34:43,102 django.server: "GET /api/surah/18/audio?reciter=maher HTTP/1.1" 500 69
+[INFO] 2025-11-17 21:34:58,831 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 21:34:59,469 django.utils.autoreload: Watching for file changes with StatReloader
+[WARNING] 2025-11-17 21:36:38,228 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 21:36:38,230 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 21:36:56,905 django.server: "GET /api/surah/18/audio?reciter=shuraim HTTP/1.1" 200 9439
+[INFO] 2025-11-17 22:12:16,180 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:12:17,948 django.server: "GET / HTTP/1.1" 200 36252
+[INFO] 2025-11-17 22:12:18,178 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:12:19,078 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-17 22:12:19,684 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:12:19,685 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:12:21,379 django.server: "GET / HTTP/1.1" 200 36252
+[INFO] 2025-11-17 22:12:21,475 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[WARNING] 2025-11-17 22:12:26,580 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:12:26,581 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:12:37,727 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:12:44,945 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:12:50,956 django.server: "GET / HTTP/1.1" 200 36252
+[INFO] 2025-11-17 22:12:50,998 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:13:04,032 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:13:24,647 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 22:13:24,702 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:13:24,868 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:13:36,270 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:13:37,995 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 22:13:38,077 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:13:55,434 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:14:02,825 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:14:03,710 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:14:17,623 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 22:14:18,364 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:14:32,691 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:14:34,495 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 22:14:34,653 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:14:34,854 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:14:40,769 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:14:47,090 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 22:14:47,125 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:14:53,825 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:15:01,127 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:15:06,754 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:16:44,622 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:16:45,904 django.server: "GET / HTTP/1.1" 200 36112
+[INFO] 2025-11-17 22:16:46,055 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:16:46,339 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:16:52,296 django.server: "GET /api/search?surah=18&q=%D8%A7%D9%84%D9%83%D9%87%D9%81&highlight=1&limit=110 HTTP/1.1" 200 55
+[INFO] 2025-11-17 22:21:16,938 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:21:25,464 django.server: "GET / HTTP/1.1" 200 36014
+[INFO] 2025-11-17 22:21:25,595 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:21:25,816 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:21:34,869 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 55
+[WARNING] 2025-11-17 22:21:40,412 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:21:40,415 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:21:48,269 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 22:35:35,001 django.utils.autoreload: C:\Users\shmha\kahfsite1\quran\api_views.py changed, reloading.
+[INFO] 2025-11-17 22:35:35,748 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:35:45,858 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:35:47,321 django.server: "GET / HTTP/1.1" 200 38030
+[INFO] 2025-11-17 22:35:47,442 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:35:47,740 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:35:50,955 django.server: "GET /api/surah/18/audio?reciter=afasy HTTP/1.1" 200 8992
+[INFO] 2025-11-17 22:35:55,915 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8882
+[WARNING] 2025-11-17 22:35:56,396 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:35:56,396 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:36:09,069 django.server: "GET /api/search?surah=18&q=%D9%85%D8%A7%D9%84%D9%87%D9%85&highlight=1&limit=110 HTTP/1.1" 200 77
+[INFO] 2025-11-17 22:36:24,838 django.server: "GET /api/search?surah=18&q=%D8%A7%D9%84%D9%83%D9%87%D9%81&highlight=1&limit=110 HTTP/1.1" 200 77
+[INFO] 2025-11-17 22:36:40,541 django.server: "GET /api/search?surah=18&q=%D9%83%D9%8E%D8%A8%D9%8F%D8%B1%D9%8E%D8%AA%D9%92&highlight=1&limit=110 HTTP/1.1" 200 378
+[INFO] 2025-11-17 22:36:56,696 django.server: "GET / HTTP/1.1" 200 38030
+[INFO] 2025-11-17 22:36:56,737 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:36:56,797 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:37:11,134 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 22:37:13,051 django.server: "GET /api/surah/18/audio?reciter=shuraim HTTP/1.1" 200 9439
+[INFO] 2025-11-17 22:37:27,975 django.server: "GET /api/tafseer?surah=18&ayah=3&lang=ar&source=sadi HTTP/1.1" 200 204
+[INFO] 2025-11-17 22:37:30,690 django.server: "GET /api/tafseer?surah=18&ayah=4&lang=ar&source=sadi HTTP/1.1" 200 207
+[INFO] 2025-11-17 22:37:33,668 django.server: "GET /api/tafseer?surah=18&ayah=6&lang=ar&source=sadi HTTP/1.1" 200 225
+[INFO] 2025-11-17 22:37:41,085 django.server: "GET /api/tafseer?surah=18&ayah=3&lang=ar&source=sadi HTTP/1.1" 200 204
+[WARNING] 2025-11-17 22:37:58,041 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:37:58,042 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:38:33,107 django.server: "GET /api/tafseer?surah=18&ayah=8&lang=ar&source=sadi HTTP/1.1" 200 212
+[INFO] 2025-11-17 22:52:59,493 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 22:53:01,683 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-17 22:53:01,810 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:53:02,700 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 22:53:16,989 django.server: "GET /api/tafseer?surah=18&ayah=3&lang=ar&source=sadi HTTP/1.1" 200 204
+[INFO] 2025-11-17 22:53:42,773 django.server: "GET /api/search?surah=18&q=%D9%88%D9%8E%D9%84%D9%8E%D8%AF%D9%8B%DB%AD%D8%A7&highlight=1&limit=110 HTTP/1.1" 200 551
+[INFO] 2025-11-17 22:53:48,943 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-17 22:53:48,991 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 22:53:55,447 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9106
+[WARNING] 2025-11-17 22:53:55,935 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-17 22:53:55,936 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-17 22:54:00,516 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 22:54:15,174 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384

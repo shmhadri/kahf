@@ -1,12 +1,4 @@
-"""
-Django settings for kahfsite1 project.
 
-- Arabic + Asia/Riyadh
-- Static via WhiteNoise (CompressedManifest)
-- Prod security for Render
-- Optional Postgres via DATABASE_URL (falls back to SQLite)
-- DRF minimal + browsable in DEBUG
-"""
 
 from pathlib import Path
 import os
@@ -24,7 +16,13 @@ DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
 
 
 def _split_csv_env(name: str, default: str = "") -> list[str]:
-    """Split comma-separated env var into list (trims spaces)."""
+    """
+    Split comma-separated env var into list (trims spaces).
+
+    مثال:
+    DJANGO_ALLOWED_HOSTS="127.0.0.1, localhost, mydomain.com"
+    → ["127.0.0.1", "localhost", "mydomain.com"]
+    """
     raw = os.getenv(name, default)
     return [x.strip() for x in raw.split(",") if x.strip()]
 
@@ -120,7 +118,11 @@ if _db_url:
     try:
         import dj_database_url  # type: ignore
 
-        DATABASES["default"] = dj_database_url.parse(_db_url, conn_max_age=600, ssl_require=True)
+        DATABASES["default"] = dj_database_url.parse(
+            _db_url,
+            conn_max_age=600,
+            ssl_require=True,
+        )
     except Exception:
         # لا تفشل الإعدادات إن لم تتوفر المكتبة – تبقى SQLite
         pass
@@ -129,10 +131,18 @@ if _db_url:
 # Password Validation
 # ==============================
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 # ==============================
@@ -143,7 +153,10 @@ TIME_ZONE = "Asia/Riyadh"
 USE_I18N = True
 USE_TZ = True
 
-LANGUAGES = [("ar", "Arabic"), ("en", "English")]
+LANGUAGES = [
+    ("ar", "Arabic"),
+    ("en", "English"),
+]
 LOCALE_PATHS = [BASE_DIR / "locale"]
 
 # ==============================
@@ -157,7 +170,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# WhiteNoise storage (ضغط + نسخ بأسماء مُعلَّمة)
+# WhiteNoise storage (ضغط + أسماء مُعلَّمة للملفات الثابتة)
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -174,12 +187,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # DRF
 # ==============================
 REST_FRAMEWORK = {
+    # في الإنتاج: JSON فقط، وفي التطوير: JSON + واجهة browsable
     "DEFAULT_RENDERER_CLASSES": (
         ["rest_framework.renderers.JSONRenderer"]
         if not DEBUG
-        else ["rest_framework.renderers.JSONRenderer", "rest_framework.renderers.BrowsableAPIRenderer"]
+        else [
+            "rest_framework.renderers.JSONRenderer",
+            "rest_framework.renderers.BrowsableAPIRenderer",
+        ]
     ),
-    "DEFAULT_PARSER_CLASSES": ["rest_framework.parsers.JSONParser"],
+    "DEFAULT_PARSER_CLASSES": [
+        "rest_framework.parsers.JSONParser",
+    ],
     # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
 }
 
@@ -211,17 +230,26 @@ if not DEBUG:
 # ==============================
 # Logging
 # - في التطوير: Console + ملف django.log
-# - في الإنتاج (Render): Console فقط (أفضل للخدمات المُدارة)
+# - في الإنتاج (Render): Console فقط
 # ==============================
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
-        "verbose": {"format": "[{levelname}] {asctime} {name}: {message}", "style": "{"},
-        "simple": {"format": "[{levelname}] {message}", "style": "{"},
+        "verbose": {
+            "format": "[{levelname}] {asctime} {name}: {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "[{levelname}] {message}",
+            "style": "{",
+        },
     },
     "handlers": {
-        "console": {"class": "logging.StreamHandler", "formatter": "simple"},
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
         **(
             {
                 "file": {
@@ -235,7 +263,22 @@ LOGGING = {
         ),
     },
     "loggers": {
-        "django": {"handlers": ["console"] + (["file"] if DEBUG else []), "level": "INFO"},
-        "quran": {"handlers": ["console"] + (["file"] if DEBUG else []), "level": "INFO", "propagate": False},
+        "django": {
+            "handlers": ["console"] + (["file"] if DEBUG else []),
+            "level": "INFO",
+        },
+        "quran": {
+            "handlers": ["console"] + (["file"] if DEBUG else []),
+            "level": "INFO",
+            "propagate": False,
+        },
     },
 }
+
+# ==============================
+# إعدادات خاصة بموقع القرآن
+# - تُستخدم في /api/times/today لتذكير الجمعة
+# ==============================
+QURAN_CITY = os.getenv("QURAN_CITY", "Riyadh")          # اسم المدينة للعرض في الواجهة
+QURAN_JUMUAH_TIME = os.getenv("QURAN_JUMUAH_TIME", "12:15")     # وقت صلاة الجمعة التقريبي (ساعة:دقيقة)
+QURAN_FRIDAY_LAST_HOUR = os.getenv("QURAN_FRIDAY_LAST_HOUR", "17:00")  # بداية آخر ساعة يُرجى فيها الإجابة تقريبًا

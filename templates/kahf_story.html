@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>سورة الكهف | القصص والدروس</title>
+  <meta name="description" content="تلخيص مبسّط لقصص سورة الكهف: أصحاب الكهف، صاحب الجنتين، موسى والخضر، ذو القرنين، مع فوائد عملية ليوم الجمعة والحياة اليومية.">
+
+  <style>
+    :root{
+      /* القيم الافتراضية (الوضع الداكن) */
+      --bg:#020617;
+      --bg-soft:#020617;
+      --card:#020617;
+      --card-soft:#020617;
+      --ink:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#38bdf8;
+      --accent-2:#22c55e;
+      --accent-soft:rgba(56,189,248,0.1);
+      --border:rgba(148,163,184,.45);
+      --shadow:0 18px 40px rgba(15,23,42,.7);
+      --radius:18px;
+
+      --fs-body:15px;
+      --fs-small:13px;
+      --fs-h1:22px;
+      --fs-h2:19px;
+      --fs-h3:16px;
+    }
+
+    /* وضع فاتح */
+    :root[data-theme="light"]{
+      --bg:#f3f4f6;
+      --bg-soft:#e5e7eb;
+      --card:#ffffff;
+      --card-soft:#f9fafb;
+      --ink:#020617;
+      --muted:#4b5563;
+      --accent:#0ea5e9;
+      --accent-2:#16a34a;
+      --accent-soft:rgba(14,165,233,0.08);
+      --border:rgba(148,163,184,.5);
+      --shadow:0 14px 30px rgba(15,23,42,.12);
+    }
+
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    body{
+      margin:0;
+      font-family:system-ui,"Tajawal","Segoe UI",sans-serif;
+      font-size:var(--fs-body);
+      background:
+        radial-gradient(circle at top,#1d253a 0,var(--bg) 52%),
+        radial-gradient(circle at bottom,#0f172a 0,var(--bg) 60%) fixed;
+      color:var(--ink);
+    }
+    :root[data-theme="light"] body{
+      background:
+        radial-gradient(circle at top,#e5f2ff 0,var(--bg) 55%),
+        radial-gradient(circle at bottom,#e5e7eb 0,var(--bg) 70%) fixed;
+    }
+
+    /* ========== Header ========== */
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:linear-gradient(90deg,rgba(15,23,42,.97),rgba(15,23,42,.92));
+      border-bottom:1px solid rgba(148,163,184,.35);
+    }
+    :root[data-theme="light"] header{
+      background:linear-gradient(90deg,rgba(249,250,251,.96),rgba(241,245,249,.96));
+      border-bottom:1px solid rgba(148,163,184,.4);
+    }
+    .bar{
+      max-width:1200px;margin:auto;
+      padding:10px 14px;
+      display:flex;gap:12px;align-items:center;justify-content:space-between;
+    }
+    .title-wrap{
+      display:flex;gap:10px;align-items:center;min-width:0;
+    }
+    .back-btn{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      background:rgba(15,23,42,.96);
+      color:#e5e7eb;
+      padding:7px 13px;
+      font-size:var(--fs-small);
+      cursor:pointer;
+      display:inline-flex;align-items:center;gap:6px;
+      white-space:nowrap;
+    }
+    :root[data-theme="light"] .back-btn{
+      background:#ffffff;
+      color:#111827;
+    }
+    .back-btn span{font-size:15px;}
+    .back-btn:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+    }
+    h1{
+      margin:0;
+      font-size:clamp(19px,3vw,var(--fs-h1));
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .subtitle-small{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      padding:4px 9px;
+      border-radius:999px;
+      background:rgba(15,23,42,.95);
+      border:1px solid rgba(56,189,248,.5);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+    :root[data-theme="light"] .tag{
+      background:#eff6ff;
+      border-color:rgba(37,99,235,.45);
+      color:#1d4ed8;
+    }
+
+    .header-right{
+      display:flex;align-items:center;gap:8px;
+      flex-wrap:wrap;justify-content:flex-end;
+    }
+
+    /* زر تبديل المظهر */
+    .theme-toggle{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      background:transparent;
+      color:var(--muted);
+      padding:6px 11px;
+      font-size:12px;
+      cursor:pointer;
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .theme-toggle span.icon{font-size:15px;}
+    .theme-toggle:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+    }
+
+    /* ========== Main Layout ========== */
+    main{
+      max-width:1200px;
+      margin:18px auto 44px;
+      padding:0 16px 40px;
+    }
+
+    .intro{
+      background:
+        radial-gradient(circle at top left,rgba(56,189,248,.22),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(34,197,94,.15),transparent 55%);
+      border-radius:var(--radius);
+      padding:18px 16px 14px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    :root[data-theme="light"] .intro{
+      background:
+        radial-gradient(circle at top left,rgba(59,130,246,.15),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(16,185,129,.12),transparent 55%);
+    }
+    .intro::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(15,23,42,.2),transparent 40%,rgba(15,23,42,.4));
+      opacity:.7;
+      pointer-events:none;
+    }
+    :root[data-theme="light"] .intro::before{
+      background:linear-gradient(135deg,rgba(248,250,252,.7),transparent 45%,rgba(226,232,240,.7));
+      opacity:.7;
+    }
+    .intro-content{position:relative;z-index:1;}
+    .intro h2{
+      margin:0 0 6px;
+      font-size:var(--fs-h2);
+    }
+    .intro p{
+      margin:4px 0;
+      font-size:var(--fs-body);
+      color:var(--muted);
+      line-height:1.9;
+    }
+    .intro-highlights{
+      display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;
+    }
+    .chip{
+      font-size:11px;
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.45);
+      background:rgba(15,23,42,.9);
+      color:var(--muted);
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    :root[data-theme="light"] .chip{
+      background:#ffffff;
+      color:#4b5563;
+    }
+
+    /* ========== Story Nav Tabs ========== */
+    .stories-nav{
+      margin-top:14px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .stories-nav button{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.4);
+      background:rgba(15,23,42,.95);
+      color:var(--muted);
+      font-size:12.5px;
+      padding:7px 12px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    :root[data-theme="light"] .stories-nav button{
+      background:#ffffff;
+    }
+    .stories-nav button span.icon{
+      font-size:14px;
+    }
+    .stories-nav button.active,
+    .stories-nav button:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+      background:rgba(15,23,42,.98);
+    }
+    :root[data-theme="light"] .stories-nav button.active,
+    :root[data-theme="light"] .stories-nav button:hover{
+      background:#eff6ff;
+    }
+
+    /* ========== Cards / Sections ========== */
+    .section-block{
+      margin-top:22px;
+    }
+    .section-heading{
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+      margin-bottom:8px;
+      flex-wrap:wrap;
+    }
+    .section-title{
+      margin:0;
+      font-size:var(--fs-h3);
+      display:flex;align-items:center;gap:8px;
+    }
+    .section-title span.num{
+      width:28px;height:28px;border-radius:999px;
+      border:1px solid rgba(148,163,184,.7);
+      display:inline-flex;align-items:center;justify-content:center;
+      font-size:13px;color:var(--accent);
+      background:rgba(15,23,42,.9);
+    }
+    :root[data-theme="light"] .section-title span.num{
+      background:#ffffff;
+      color:#0f172a;
+    }
+    .section-tag{
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      color:var(--muted);
+      background:rgba(15,23,42,.85);
+    }
+    :root[data-theme="light"] .section-tag{
+      background:#ffffff;
+    }
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media(min-width:880px){
+      .story-grid{
+        grid-template-columns:1.1fr .9fr;
+      }
+    }
+
+    .card{
+      background:radial-gradient(circle at top,var(--card-soft) 0,var(--card) 60%);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:15px 15px 17px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top,rgba(15,23,42,.3),transparent 60%);
+      opacity:.5;
+      pointer-events:none;
+    }
+    :root[data-theme="light"] .card::before{
+      background:radial-gradient(circle at top,rgba(248,250,252,.9),transparent 60%);
+      opacity:.7;
+    }
+    .card-inner{position:relative;z-index:1;}
+    .card h3{
+      margin:0 0 6px;
+      font-size:15.5px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .card h4{
+      margin:4px 0 6px;
+      font-size:15px;
+      color:var(--ink);
+    }
+    .card p{
+      margin:4px 0;
+      font-size:var(--fs-body);
+      color:var(--muted);
+      line-height:1.9;
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,.92);
+      border:1px solid rgba(148,163,184,.5);
+      font-size:11.5px;
+      color:var(--muted);
+      margin-top:7px;
+    }
+    :root[data-theme="light"] .pill{
+      background:#ffffff;
+    }
+    .pill .dot{
+      width:6px;height:6px;border-radius:999px;
+      background:var(--accent);
+    }
+
+    ul{
+      margin:6px 0 0;
+      padding-right:20px;
+      color:var(--muted);
+      font-size:var(--fs-body);
+      line-height:1.9;
+    }
+    li{margin-bottom:4px;}
+
+    .practical-box{
+      border-radius:var(--radius);
+      border:1px solid rgba(56,189,248,.35);
+      background:rgba(15,23,42,.96);
+      padding:10px 11px;
+      font-size:var(--fs-small);
+      color:var(--muted);
+      margin-top:8px;
+    }
+    :root[data-theme="light"] .practical-box{
+      background:#f9fafb;
+    }
+    .practical-box-title{
+      font-size:var(--fs-small);
+      margin-bottom:4px;
+      color:var(--accent);
+      display:flex;align-items:center;gap:6px;
+    }
+
+    /* ========== Action Area & Footer ========== */
+    .btn-row{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+    }
+    .btn-main{
+      border-radius:999px;
+      border:none;
+      padding:9px 15px;
+      font-size:14px;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#020617;
+      display:inline-flex;align-items:center;gap:6px;
+      font-weight:600;
+    }
+    .btn-ghost{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.6);
+      padding:8px 13px;
+      font-size:13px;
+      cursor:pointer;
+      background:rgba(15,23,42,.96);
+      color:var(--muted);
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    :root[data-theme="light"] .btn-ghost{
+      background:#ffffff;
+    }
+    .btn-main:hover{opacity:.93;}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+    .footer-note{
+      margin-top:22px;
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+      max-width:800px;
+      margin-left:auto;margin-right:auto;
+    }
+
+    .ayah-note{
+      display:inline-block;
+      font-size:11px;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .anchor-offset{
+      scroll-margin-top:90px;
+    }
+
+    @media (max-width:640px){
+      .bar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .header-right{
+        width:100%;
+        justify-content:space-between;
+      }
+      .stories-nav{
+        margin-top:10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="title-wrap">
+      <button class="back-btn" onclick="goBack()">
+        <span>⬅️</span> رجوع للسورة
+      </button>
+      <div>
+        <h1>سورة الكهف – القصص والدروس</h1>
+        <div class="subtitle-small">أربع قصص عظيمة ترسم طريق الإيمان من الفتية إلى ذي القرنين</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="tag">تذكير ليوم الجمعة 🌙</span>
+      <button type="button" class="theme-toggle" id="themeToggle">
+        <span class="icon" id="themeIcon">🌙</span>
+        <span id="themeText">وضع داكن</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- مقدمة عامة -->
+  <section class="intro">
+    <div class="intro-content">
+      <h2>لماذا نقرأ سورة الكهف كل جمعة؟</h2>
+      <p>
+        سورة الكهف سورة عظيمة علّمنا النبي ﷺ أن قراءتها يوم الجمعة سبب للنور بين الجمعتين
+        بإذن الله. وهي ليست مجرد قراءة للحروف، بل تدبّر لقصصها ورسائلها التي تعالج
+        أشكالًا مختلفة من الفتن: فتنة الدين، والمال، والعلم، والسلطة.
+      </p>
+      <p>
+        هذه الصفحة <b>تلخيص وشرح مبسّط</b> لأهم القصص والدروس العملية، لتساعدك
+        على ربط ما تقرأه في السورة بحياتك اليومية.
+      </p>
+
+      <div class="intro-highlights">
+        <span class="chip">📖 أصحاب الكهف: ثبات الشباب وقت الفتن</span>
+        <span class="chip">🌿 صاحب الجنتين: فتنة المال والغرور</span>
+        <span class="chip">📚 موسى والخضر: التواضع للعلم الإلهي</span>
+        <span class="chip">🌍 ذو القرنين: القوة مع العدل والرحمة</span>
+      </div>
+
+      <div class="stories-nav">
+        <button type="button" class="tab-btn active" data-target="kahf-story">
+          <span class="icon">⛰️</span> أصحاب الكهف
+        </button>
+        <button type="button" class="tab-btn" data-target="gardens-story">
+          <span class="icon">🌿</span> صاحب الجنتين
+        </button>
+        <button type="button" class="tab-btn" data-target="moses-story">
+          <span class="icon">📚</span> موسى والخضر
+        </button>
+        <button type="button" class="tab-btn" data-target="dq-story">
+          <span class="icon">🌍</span> ذو القرنين
+        </button>
+        <button type="button" class="tab-btn" data-target="summary-actions">
+          <span class="icon">✅</span> خلاصة عملية
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. أصحاب الكهف -->
+  <section id="kahf-story" class="section-block anchor-offset">
+    <div class="section-heading">
+      <h3 class="section-title">
+        <span class="num">1</span>
+        قصة أصحاب الكهف – ثبات الشباب على الدين
+      </h3>
+      <span class="section-tag">فتنة الدين والعقيدة</span>
+    </div>
+
+    <div class="story-grid">
+      <!-- ملخص القصة -->
+      <article class="card">
+        <div class="card-inner">
+          <h3>ملخص القصة كما ورد معناها في السورة</h3>
+          <p>
+            في زمنٍ عمّت فيه عبادة غير الله، كان هناك جماعة من الفتية
+            آمنوا بربهم ورفضوا الشرك. لم يسايروا قومهم في الباطل ولم
+            يُجاملوا على حساب عقيدتهم، بل أعلنوا توحيد الله وحده.
+          </p>
+          <p>
+            عندما اشتد الضغط عليهم وخافوا على دينهم، هاجروا بدينهم
+            واختاروا كهفًا في الجبل ملجأً لهم، وقالوا دعاءهم العظيم
+            الذي ذكرت السورة معناه: أنهم سألوا ربهم رحمة وهداية في أمرهم.
+          </p>
+          <p>
+            استجاب الله لهم، فأنامهم سنين طويلة، وهم في الكهف محفوظون
+            من حرارة الشمس ومن أذى الناس، يتقلّبون في نومهم حفظًا
+            لأبدانهم، وكلبهم على باب الكهف. كان منظرهم مهيبًا؛
+            من يراهم يظنهم مستيقظين وهم نائمون، وكل ذلك من رحمة الله.
+          </p>
+          <p>
+            بعد زمن طويل جدًّا أيقظهم الله، فظنوا أنهم ناموا يومًا أو بعض يوم،
+            ثم سلّموا الأمر إلى علم الله. أرسلوا واحدًا منهم خفيةً إلى المدينة
+            ليشتري طعامًا حلالًا، لكن النقود التي يحملها كانت من زمن قديم،
+            فتعجب الناس وعُرف أمرهم، فأصبحوا آية ظاهرة على قدرة الله على البعث.
+          </p>
+          <span class="pill"><span class="dot"></span> رسالة مركزية: إذا قدّمت إيمانك على كل شيء، تولّى الله حمايتك بطرق لا تتخيلها.</span>
+        </div>
+      </article>
+
+      <!-- فوائد عملية -->
+      <article class="card">
+        <div class="card-inner">
+          <h4>فوائد عملية من قصة أصحاب الكهف</h4>
+          <ul>
+            <li><b>اختيار الصحبة:</b> الفتية لم ينجُ كل واحد وحده، بل اجتمعوا على الإيمان؛ فابحث عن أصدقاء يقرّبونك من الله.</li>
+            <li><b>الهجرة بالقلب أو بالجسد:</b> إن لم تستطع تغيير بيئة مليئة بالمعاصي، فغيّرها أنت أو ابتعد عن أسباب الفتنة قدر استطاعتك.</li>
+            <li><b>الدعاء وقت الحيرة:</b> دعاؤهم بالرحمة والتيسير كان مفتاح النجاة؛ اجعل لك دعاءً ثابتًا تلجأ به لله في أوقات الضغط.</li>
+            <li><b>الزمن يتغير والإيمان يبقى:</b> تغيّرت أجيال وملوك، لكن ذكرهم باقٍ في القرآن؛ فاجعل همّك ما يبقى عند الله.</li>
+          </ul>
+
+          <div class="practical-box">
+            <div class="practical-box-title">تطبيق مباشر اليوم:</div>
+            <ul>
+              <li>راجع دائرة صداقاتك: هل تعينك على الصلاة، وحفظ القرآن، وترك الحرام؟</li>
+              <li>اختر "كهفك" الآمن: مكان أو وقت في الأسبوع تبعد فيه عن الضوضاء للتفكر والعبادة.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2. صاحب الجنتين -->
+  <section id="gardens-story" class="section-block anchor-offset">
+    <div class="section-heading">
+      <h3 class="section-title">
+        <span class="num">2</span>
+        قصة صاحب الجنتين – فتنة المال والغرور
+      </h3>
+      <span class="section-tag">فتنة المال والترف</span>
+    </div>
+
+    <div class="story-grid">
+      <!-- ملخص -->
+      <article class="card">
+        <div class="card-inner">
+          <h3>ملخص القصة كما ورد معناها في السورة</h3>
+          <p>
+            تحدثت السورة عن رجلٍ آتاه الله جنتين (بستانين) من أعناب وحدائق
+            جميلة، يفصل بينهما نهر، وزرعٌ مثمر ورزق واسع. فاغترّ بما عنده من مال
+            وزينة، وظن أن هذه النعمة لا تزول.
+          </p>
+          <p>
+            جادَل صاحبه المؤمن، وتكلّم بكلام فيه سوء أدب مع ربِّه،
+            فزعم أن بستانه لن يهلك أبدًا، بل وصل به الغرور أن شكّ
+            في البعث أو استبعده، وقال ما معناه: حتى لو رجعت إلى ربي
+            سأجد عنده خيرًا مما عندي الآن.
+          </p>
+          <p>
+            صاحبه المؤمن ذكّره بنعمة الله عليه، وذكّره بأصل الإنسان
+            الضعيف، وأن الأولى به أن يقول: ما شاء الله لا قوة إلا بالله.
+          </p>
+          <p>
+            لكن الرجل لم يعتبر، فابتلاه الله فهلكت جنته فجأة،
+            فأصبح يقلّب كفّيه على ما أنفق فيها بعد أن صارت خرابًا،
+            وتمنّى لو أنه لم يشرك بربه أحدًا ولم يغترّ بالدنيا.
+          </p>
+          <span class="pill"><span class="dot"></span> رسالة مركزية: المال إذا لم يُضبط بالإيمان والتواضع قد يكون سببًا في هلاك صاحبه.</span>
+        </div>
+      </article>
+
+      <!-- فوائد عملية -->
+      <article class="card">
+        <div class="card-inner">
+          <h4>فوائد عملية من قصة صاحب الجنتين</h4>
+          <ul>
+            <li><b>نِسب النعمة لله:</b> كل نجاح أو مال أو مشروع جديد يجب أن يُربط بقول: "ما شاء الله، لا قوة إلا بالله".</li>
+            <li><b>لا تغتر بالمظهر:</b> بستان اليوم قد يصبح أطلال الغد؛ الثبات الحقيقي في الإيمان والعمل الصالح.</li>
+            <li><b>الصديق الناصح نعمة:</b> صاحبه المؤمن كان مرآةً له؛ احرص على من يذكّرك بحدودك البشرية.</li>
+            <li><b>المال امتحان:</b> ليس كل اتساع في الرزق علامة رضا، بل قد يكون اختبارًا لشكرك أو كفرك.</li>
+          </ul>
+
+          <div class="practical-box">
+            <div class="practical-box-title">تطبيق مباشر اليوم:</div>
+            <ul>
+              <li>كلما رأيت مالك أو بيتك أو مشروعك، ردّد: "ما شاء الله، لا قوة إلا بالله".</li>
+              <li>خصّص جزءًا ثابتًا من مالك للصدقة، حتى تظل النعمة مربوطة بالآخرة لا بالدنيا فقط.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. موسى والخضر -->
+  <section id="moses-story" class="section-block anchor-offset">
+    <div class="section-heading">
+      <h3 class="section-title">
+        <span class="num">3</span>
+        قصة موسى والخضر – التواضع للعلم الإلهي
+      </h3>
+      <span class="section-tag">فتنة العلم والفهم</span>
+    </div>
+
+    <div class="story-grid">
+      <!-- ملخص -->
+      <article class="card">
+        <div class="card-inner">
+          <h3>ملخص القصة كما ورد معناها في السورة</h3>
+          <p>
+            أخبر الله موسى عليه السلام أن هناك عبدًا من عباد الله
+            آتاه الله علمًا من عنده، فذهب موسى في رحلة شاقة ليتعلم منه.
+            التقى بالخضر، فاشترط عليه الخضر ألا يسأله عن شيء حتى يحدّثه به.
+          </p>
+          <p>
+            ركبَا السفينة فخرقها الخضر، فاستغرب موسى؛ كيف يُخرق
+            سفينة أناسٍ مساكين؟! ثم قتل غلامًا، فاشتد إنكار موسى؛
+            كيف يُقتل نفس بغير حق؟! ثم أقام جدارًا في قرية رفض أهلها
+            أن يضيفوهما، فتعجّب موسى من تحمل المشقة لأناسٍ لم يكرموهما.
+          </p>
+          <p>
+            في النهاية أخبر الخضر موسى بمعاني ما فعل: خرق السفينة
+            كان رحمة بأصحابها حتى لا يأخذها ملك ظالم، وقتل الغلام
+            كان لحكمة يعلمها الله لحماية إيمان أهله، وإقامة الجدار
+            كان حفظًا لكنز يتيمَين من بعدهما.
+          </p>
+          <p>
+            تعلّم موسى أن العلم عند الله واسع، وأن ما نراه شرًا قد يكون
+            وراءه خير كبير لا ندركه الآن.
+          </p>
+          <span class="pill"><span class="dot"></span> رسالة مركزية: ليس كل ما تراه أمامك يمكن أن تحكم عليه من ظاهره؛ وراء أقدار الله حكم خفية.</span>
+        </div>
+      </article>
+
+      <!-- فوائد عملية -->
+      <article class="card">
+        <div class="card-inner">
+          <h4>فوائد عملية من قصة موسى والخضر</h4>
+          <ul>
+            <li><b>تواضع العالم:</b> موسى نبيّ من أولي العزم ومع ذلك خرج يتعلم؛ فكيف بنا نحن؟</li>
+            <li><b>التروّي قبل الحكم:</b> لا تحكم على الأحداث من لقطة واحدة في الزمن؛ انظر للصورة الأوسع.</li>
+            <li><b>الثقة بحكمة الله:</b> قد تفقد شيئًا تحبه، لكن الله يصرف عنك به شرًا لا تراه.</li>
+            <li><b>الصبر على طلب العلم:</b> من شروط الانتفاع بالعلم الصبر، وعدم الاستعجال في الأسئلة والاعتراضات.</li>
+          </ul>
+
+          <div class="practical-box">
+            <div class="practical-box-title">تطبيق مباشر اليوم:</div>
+            <ul>
+              <li>كلما مررت بحدث مؤلم، قل: "اللهم أَرِني حِكمتك وارزقني الرضا بقضائك".</li>
+              <li>خصّص وقتًا أسبوعيًا لتعلّم شيء ديني أو دنيوي ينفعك، مع نية التواضع لله في طلب العلم.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. ذو القرنين -->
+  <section id="dq-story" class="section-block anchor-offset">
+    <div class="section-heading">
+      <h3 class="section-title">
+        <span class="num">4</span>
+        قصة ذو القرنين – القوة مع العدل والرحمة
+      </h3>
+      <span class="section-tag">فتنة السلطة والقوة</span>
+    </div>
+
+    <div class="story-grid">
+      <!-- ملخص -->
+      <article class="card">
+        <div class="card-inner">
+          <h3>ملخص القصة كما ورد معناها في السورة</h3>
+          <p>
+            ذكرت السورة رجلًا مُمكَّنًا في الأرض، آتاه الله من كل شيء سببًا:
+            علمًا وقدرة ووسائل، فسار في الأرض شرقًا وغربًا ينشر العدل
+            ويقيم الحق، إنه ذو القرنين.
+          </p>
+          <p>
+            كان يحكم بين الناس بالعدل، فمن ظلم عوقِب، ومن آمن وعمل
+            صالحًا جازاه خيرًا. وصل إلى قوم يشتكون من أذى يأجوج ومأجوج
+            الذين يفسدون في الأرض، وطلبوا منه أن يجعل بينهم وبينهم سدًا.
+          </p>
+          <p>
+            لم يستغل حاجتهم ليأخذ مالهم، بل طلب منهم التعاون العملي؛
+            أحضروا الحديد والنحاس المنصهر، فبنى سدًا قويًا يمنع فساد
+            يأجوج ومأجوج حتى يأذن الله بزواله في آخر الزمان.
+          </p>
+          <p>
+            مع كل هذه القوة والنفوذ، نسب الفضل لله، وعلم أن هذا من رحمة
+            ربه وليس من نفسه.
+          </p>
+          <span class="pill"><span class="dot"></span> رسالة مركزية: القوة الحقيقية أن تستخدم ما عندك من تمكين لنفع الناس ونشر العدل، لا للتكبر والتسلط.</span>
+        </div>
+      </article>
+
+      <!-- فوائد عملية -->
+      <article class="card">
+        <div class="card-inner">
+          <h4>فوائد عملية من قصة ذو القرنين</h4>
+          <ul>
+            <li><b>التمكين مسؤولية:</b> كل منصب أو شهادة أو مهارة هي أمانة، تُسأل: ماذا فعلت بها؟</li>
+            <li><b>العدل قبل القوة:</b> لا قيمة لقوة بلا عدل، حتى في بيتك أو عملك الصغير.</li>
+            <li><b>روح الفريق:</b> ذو القرنين أشرك القوم في بناء السد؛ النجاح الكبير يحتاج عملًا جماعيًا.</li>
+            <li><b>نسبة الفضل لله:</b> مهما حقّقت من إنجاز، تذكر أن التوفيق من الله أولًا وآخرًا.</li>
+          </ul>
+
+          <div class="practical-box">
+            <div class="practical-box-title">تطبيق مباشر اليوم:</div>
+            <ul>
+              <li>اسأل نفسك: ما المهارة أو المنصب الذي أملك؟ وكيف أستخدمه لخدمة الناس لا لخدمتي وحدي؟</li>
+              <li>اتّخذ قرارًا عمليًا هذا الأسبوع: مساعدة شخص، أو مشروع نافع، أو مبادرة خيرية صغيرة.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- خلاصة عملية ليوم الجمعة والحياة -->
+  <section id="summary-actions" class="section-block anchor-offset">
+    <div class="section-heading">
+      <h3 class="section-title">
+        <span class="num">✓</span>
+        خلاصة عملية من سورة الكهف ليوم الجمعة
+      </h3>
+      <span class="section-tag">خطوات بسيطة قابلة للتطبيق</span>
+    </div>
+
+    <article class="card">
+      <div class="card-inner">
+        <h3>كيف أستفيد من السورة في حياتي؟</h3>
+        <p>
+          سورة الكهف تعلّمنا كيف نتعامل مع أربعة أنواع من الفتن:
+          <b>الدين، المال، العلم، والسلطة</b>. يمكنك أن تجعل يوم الجمعة
+          موعدًا أسبوعيًا لمراجعة نفسك أمام هذه القصص.
+        </p>
+
+        <ul>
+          <li><b>مع أصحاب الكهف:</b> راجع إيمانك وصحبتك، واسأل نفسك: ما هو "كهفي" الذي أهرب إليه من الفتنة إلى الطاعة؟</li>
+          <li><b>مع صاحب الجنتين:</b> راقب قلبك عند المال والنجاح؛ هل يقودك للشكر أم للغرور؟</li>
+          <li><b>مع موسى والخضر:</b> واجه الأحداث الصعبة بثقة في حكمة الله، لا بمجرد اعتراضات سريعة.</li>
+          <li><b>مع ذي القرنين:</b> استثمر ما عندك من قوة أو علم أو وظيفة في نفع الناس لا ضررهم.</li>
+        </ul>
+
+        <div class="practical-box" style="margin-top:10px;">
+          <div class="practical-box-title">برنامج صغير ليوم الجمعة:</div>
+          <ul>
+            <li>📖 قراءة سورة الكهف بتدبر قدر المستطاع.</li>
+            <li>📝 اختيار قصة واحدة والتركيز على درس عملي واحد تطبّقه هذا الأسبوع.</li>
+            <li>🤲 تخصيص وقت للدعاء في الساعة المرجوّة من يوم الجمعة.</li>
+            <li>💡 كتابة ملاحظة قصيرة (في الجوال أو الدفتر) بعنوان: "درس هذا الأسبوع من سورة الكهف".</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a href="{% url 'home' %}" class="btn-main">
+            ⬅️ العودة لصفحة سورة الكهف
+          </a>
+          <button class="btn-ghost" type="button" onclick="scrollToTop()">
+            🔝 أعلى الصفحة
+          </button>
+        </div>
+
+        <div class="ayah-note">
+          تنبيه مهم: هذه الصفحة تلخيص وشرح، وليست بديلاً عن قراءة الآيات من المصحف.
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="footer-note">
+    هذا المحتوى اجتهاد في التلخيص والتقريب، وقد يقع فيه نقص أو خطأ،
+    فالمرجع دائمًا إلى كلام الله تعالى وتفسير أهل العلم الموثوقين.
+  </div>
+</main>
+
+<script>
+  function goBack(){
+    if (document.referrer) {
+      history.back();
+    } else {
+      window.location.href = "{% url 'home' %}";
+    }
+  }
+
+  function scrollToTop(){
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  // تنقّل بين أقسام القصص من شريط الأزرار
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+      if (target){
+        target.scrollIntoView({behavior:"smooth"});
+      }
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+
+  // تبديل المظهر (فاتح / داكن) مع حفظ في localStorage
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const themeText = document.getElementById("themeText");
+
+  function applyTheme(theme){
+    if (theme === "light"){
+      root.setAttribute("data-theme","light");
+      themeIcon.textContent = "☀️";
+      themeText.textContent = "وضع فاتح";
+    } else {
+      root.setAttribute("data-theme","dark");
+      themeIcon.textContent = "🌙";
+      themeText.textContent = "وضع داكن";
+    }
+    localStorage.setItem("kahf-theme", theme);
+  }
+
+  const savedTheme = localStorage.getItem("kahf-theme");
+  if (savedTheme === "light" || savedTheme === "dark"){
+    applyTheme(savedTheme);
+  } else {
+    // افتراضي: داكن
+    applyTheme("dark");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const nextTheme = current === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+  });
+</script>
+
+</body>
+</html>
+```
