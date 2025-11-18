@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /static/
+Disallow: /media/
+
+Sitemap: https://kahf-4.onrender.com/sitemap.xml

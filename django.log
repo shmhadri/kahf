@@ -382,3 +382,22 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf
 [INFO] 2025-11-18 15:08:48,520 django.server: "GET /api/times/today HTTP/1.1" 200 183
 [INFO] 2025-11-18 15:08:49,362 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9106
 [INFO] 2025-11-18 15:09:06,938 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-18 23:00:06,608 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-18 23:00:09,579 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-18 23:00:09,672 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 23:00:09,935 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[WARNING] 2025-11-18 23:00:10,042 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-18 23:00:10,049 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-18 23:00:13,363 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9106
+[INFO] 2025-11-18 23:00:20,688 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-18 23:21:57,015 django.utils.autoreload: C:\Users\shmha\kahfsite1\kahfsite1\urls.py changed, reloading.
+[INFO] 2025-11-18 23:21:58,109 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-18 23:23:46,027 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-18 23:25:25,177 django.server: "GET / HTTP/1.1" 200 42358
+[INFO] 2025-11-18 23:25:25,265 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 23:25:25,439 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-18 23:25:27,887 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[WARNING] 2025-11-18 23:25:48,552 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-18 23:25:48,554 django.server: "GET /favicon.ico HTTP/1.1" 404 3545
+[INFO] 2025-11-18 23:26:20,424 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-18 23:26:33,857 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8882
