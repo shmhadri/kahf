@@ -1,8 +1,10 @@
+```html
 {% load static %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 
 <title>سورة الكهف | قراءة، تشغيل صوتي، تفسير مختصر، تذكير الجمعة وعدّاد الصلاة على النبي ﷺ</title>
@@ -16,59 +18,90 @@
 <!-- 🔹 إعدادات الفهرسة -->
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"/>
 
-<!-- 🔹 معلومات أخرى -->
+<!-- 🔹 معلومات إضافية -->
 <meta name="author" content="موقع سورة الكهف التفاعلي"/>
 <meta name="generator" content="Django"/>
+<meta name="language" content="ar"/>
 <meta name="theme-color" content="#0b1220"/>
 
 <!-- 🔹 Canonical (الرابط الأساسي للصفحة) -->
 <link rel="canonical" href="https://kahf-4.onrender.com/"/>
 
+<!-- 🔹 أيقونة للموقع (إن توفرت) -->
+<link rel="icon" href="{% static 'img/kahf-icon.png' %}" type="image/png"/>
+
 <!-- 🔹 Open Graph (مشاركة على واتساب / فيسبوك وغيرها) -->
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="ar_SA"/>
+<meta property="og:locale:alternate" content="en_US"/>
 <meta property="og:site_name" content="سورة الكهف | تذكير الجمعة"/>
 <meta property="og:title" content="سورة الكهف | قراءة وتلاوة مع تذكير الجمعة وعدّاد الصلاة على النبي ﷺ"/>
 <meta property="og:description" content="اقرأ واستمع إلى سورة الكهف كاملة مع تشغيل صوتي، بحث في الآيات، تفسير مختصر، تذكير بساعة يُرجى فيها إجابة الدعاء يوم الجمعة، وعدّاد للصلاة على النبي ﷺ."/>
 <meta property="og:url" content="https://kahf-4.onrender.com/"/>
-
-<!-- لو أضفت صورة مميزة لاحقًا ضع رابطها هنا -->
-<!-- <meta property="og:image" content="https://kahf-4.onrender.com/static/img/kahf-cover.jpg"/> -->
+<meta property="og:image" content="https://kahf-4.onrender.com{% static 'img/kahf-cover.jpg' %}"/>
+<meta property="og:image:alt" content="صفحة تفاعلية لقراءة سورة الكهف مع تذكير الجمعة"/>
 
 <!-- 🔹 Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="سورة الكهف | قراءة وتلاوة وتذكير الجمعة"/>
-<meta name="twitter:description" content="سورة الكهف كاملة مع تشغيل صوتي، بحث، تفسير مختصر، تذكير بساعة الإجابة وعدّاد للصلاة على النبي ﷺ."/>
-<!-- <meta name="twitter:image" content="https://kahf-4.onrender.com/static/img/kahf-cover.jpg"/> -->
+<meta name="twitter:description" content="سورة الكهف كاملة مع تشغيل صوتي، بحث في الآيات، تفسير مختصر، تذكير بساعة الإجابة وعدّاد للصلاة على النبي ﷺ."/>
+<meta name="twitter:image" content="https://kahf-4.onrender.com{% static 'img/kahf-cover.jpg' %}"/>
 
-<!-- 🔹 Structured Data (JSON-LD) لتعريف الصفحة لمحركات البحث -->
+<!-- 🔹 Structured Data (JSON-LD) لتعريف الصفحة + مسار التصفح للصفحات الثلاث -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "سورة الكهف | قراءة وتلاوة وتذكير الجمعة وعدّاد الصلاة على النبي ﷺ",
-  "url": "https://kahf-4.onrender.com/",
-  "inLanguage": "ar-SA",
-  "description": "سورة الكهف كاملة قراءة وتلاوة مع تشغيل صوتي لعدة قرّاء، بحث في الآيات، تفسير مختصر، تذكير بساعة يُرجى فيها إجابة الدعاء يوم الجمعة، وعدّاد خاص للصلاة على النبي ﷺ.",
-  "about": {
-    "@type": "CreativeWork",
-    "name": "سورة الكهف",
-    "alternateName": [
-      "Surah Al-Kahf",
-      "سورة الكهف يوم الجمعة",
-      "قراءة سورة الكهف مع عداد الصلاة على النبي"
-    ],
-    "genre": [
-      "Quran",
-      "Islamic",
-      "Religious"
-    ]
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://kahf-4.onrender.com/?q={search_term}",
-    "query-input": "required name=search_term"
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "سورة الكهف | قراءة وتلاوة وتذكير الجمعة وعدّاد الصلاة على النبي ﷺ",
+      "url": "https://kahf-4.onrender.com/",
+      "inLanguage": "ar-SA",
+      "description": "سورة الكهف كاملة قراءة وتلاوة مع تشغيل صوتي لعدة قرّاء، بحث في الآيات، تفسير مختصر، تذكير بساعة يُرجى فيها إجابة الدعاء يوم الجمعة، وعدّاد خاص للصلاة على النبي ﷺ.",
+      "about": {
+        "@type": "CreativeWork",
+        "name": "سورة الكهف",
+        "alternateName": [
+          "Surah Al-Kahf",
+          "سورة الكهف يوم الجمعة",
+          "قراءة سورة الكهف مع عداد الصلاة على النبي"
+        ],
+        "genre": [
+          "Quran",
+          "Islamic",
+          "Religious"
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://kahf-4.onrender.com/?q={search_term}",
+        "query-input": "required name=search_term"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "سورة الكهف",
+          "item": "https://kahf-4.onrender.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "سورة الكهف (الرئيسية)",
+          "item": "https://kahf-4.onrender.com/surah/18/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "قصة أصحاب الكهف",
+          "item": "https://kahf-4.onrender.com/kahf/story/"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -478,7 +511,7 @@
     <div class="group">
       <div class="grid3">
         <button class="btn brand full" onclick="playSurah()">▶️ تشغيل السورة كاملة</button>
-        <button class="btn.warn full" onclick="playSelectedAyah()">🔊 تشغيل الآية المحددة</button>
+        <button class="btn warn full" onclick="playSelectedAyah()">🔊 تشغيل الآية المحددة</button>
         <button class="btn full" onclick="stopAudio()">⏹️ إيقاف</button>
       </div>
       <div class="hint">اختر القارئ من الأعلى وسيتم تحميل الروابط الصوتية في الخلفية.</div>
@@ -488,7 +521,8 @@
       <div class="row">
         <button class="btn ghost" onclick="scrollTopSmooth()">⬆️ أعلى الصفحة</button>
         <span style="flex:1"></span>
-        <span class="badge">نسخة تجريبية ✅</span>
+        <!-- ✅ هنا كتبنا "موقع تجريبي" مع الإبقاء على الشارة -->
+        <span class="badge">موقع تجريبي ✅</span>
       </div>
     </div>
   </div>
@@ -598,14 +632,22 @@
     else headerEl.classList.add('light-mode');
   }
 
+  // ✅ تعديل: جعل المظهر الأساسي نهاري، ثم يحفظ اختيار المستخدم
   function loadTheme(){
     const saved = localStorage.getItem('mode');
+    const r = document.documentElement;
+
     if(saved === 'dark'){
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
+      r.classList.remove('light');
+      r.classList.add('dark');
     }else if(saved === 'light'){
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
+      r.classList.remove('dark');
+      r.classList.add('light');
+    }else{
+      // أول زيارة: افتراضي نهاري
+      r.classList.remove('dark');
+      r.classList.add('light');
+      localStorage.setItem('mode','light');
     }
     applyHeaderMode();
   }
@@ -1182,3 +1224,4 @@
 </script>
 </body>
 </html>
+```

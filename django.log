@@ -412,3 +412,9 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf
 [INFO] 2025-11-19 00:57:58,197 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
 [INFO] 2025-11-19 00:58:11,682 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
 [INFO] 2025-11-19 00:58:18,898 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-19 01:05:14,467 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-19 01:35:51,600 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-19 01:35:55,180 django.server: "GET / HTTP/1.1" 200 43814
+[INFO] 2025-11-19 01:35:55,257 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-19 01:35:55,539 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-19 01:35:59,093 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
