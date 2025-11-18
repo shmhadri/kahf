@@ -362,3 +362,23 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf
 [WARNING] 2025-11-17 22:53:55,936 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
 [INFO] 2025-11-17 22:54:00,516 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
 [INFO] 2025-11-17 22:54:15,174 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-17 23:34:19,624 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-17 23:34:22,059 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-17 23:34:22,240 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-17 23:34:23,082 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-17 23:34:25,074 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-17 23:34:25,174 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 15:08:43,009 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-18 15:08:45,146 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-18 15:08:45,464 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 15:08:46,404 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-18 15:08:46,487 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-18 15:08:46,847 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[WARNING] 2025-11-18 15:08:47,156 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-18 15:08:47,157 django.server: "GET /favicon.ico HTTP/1.1" 404 3199
+[INFO] 2025-11-18 15:08:48,187 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-18 15:08:48,419 django.server: "GET / HTTP/1.1" 200 38893
+[INFO] 2025-11-18 15:08:48,498 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 15:08:48,520 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-18 15:08:49,362 django.server: "GET /api/surah/18/audio?reciter=minshawi HTTP/1.1" 200 9106
+[INFO] 2025-11-18 15:09:06,938 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
