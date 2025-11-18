@@ -401,3 +401,14 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'kahf_story' not found. 'kahf
 [WARNING] 2025-11-18 23:25:48,554 django.server: "GET /favicon.ico HTTP/1.1" 404 3545
 [INFO] 2025-11-18 23:26:20,424 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
 [INFO] 2025-11-18 23:26:33,857 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8882
+[INFO] 2025-11-19 00:57:20,605 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2025-11-19 00:57:39,209 django.server: "GET / HTTP/1.1" 200 42358
+[INFO] 2025-11-19 00:57:39,298 django.server: "GET /api/times/today HTTP/1.1" 200 183
+[INFO] 2025-11-19 00:57:39,555 django.server: "GET /api/surah/18 HTTP/1.1" 200 29624
+[INFO] 2025-11-19 00:57:44,536 django.server: "GET /api/surah/18/audio?reciter=husary HTTP/1.1" 200 8882
+[WARNING] 2025-11-19 00:57:48,237 django.request: Not Found: /favicon.ico
+[WARNING] 2025-11-19 00:57:48,239 django.server: "GET /favicon.ico HTTP/1.1" 404 3742
+[INFO] 2025-11-19 00:57:50,061 django.server: "GET /api/surah/18/audio?reciter=shuraim HTTP/1.1" 200 9439
+[INFO] 2025-11-19 00:57:58,197 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-19 00:58:11,682 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384
+[INFO] 2025-11-19 00:58:18,898 django.server: "GET /kahf/story/ HTTP/1.1" 200 35384

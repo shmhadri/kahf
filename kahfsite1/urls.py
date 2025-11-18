@@ -21,7 +21,7 @@ urlpatterns = [
     # رابط إضافي واضح لسورة الكهف
     path("surah/18/", Surah18View.as_view(), name="surah18_page"),
 
-    # صفحة قصة أصحاب الكهف
+    # صفحة قصة أصحاب الكهف (ملخص)
     path("kahf/story/", KahfStoryView.as_view(), name="kahf_story"),
 
     # ملف robots.txt
@@ -29,19 +29,29 @@ urlpatterns = [
         "robots.txt",
         TemplateView.as_view(
             template_name="robots.txt",
-            content_type="text/plain"
+            content_type="text/plain",
         ),
         name="robots_txt",
     ),
 
-    # ملف sitemap.xml (يتم إنشاؤه يدويًا في templates)
+    # ملف sitemap.xml
     path(
         "sitemap.xml",
         TemplateView.as_view(
             template_name="sitemap.xml",
-            content_type="application/xml"
+            content_type="application/xml",
         ),
         name="sitemap_xml",
+    ),
+
+    # ملف التحقق من جوجل: https://kahf-4.onrender.com/googlea532a5ae726057b6.html
+    path(
+        "googlea532a5ae726057b6.html",
+        TemplateView.as_view(
+            template_name="googlea532a5ae726057b6.html",
+            content_type="text/html",
+        ),
+        name="google_verify_a532",
     ),
 ]
 
